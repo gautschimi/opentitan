@@ -51,8 +51,7 @@ module flash_phy_rd
   output logic data_err_o,
   output logic relbl_ecc_err_o,
   output logic intg_ecc_err_o,
-  output logic [BusFullWidth-1:0] data_host_o,
-  output logic [BusFullWidth-1:0] data_ctrl_o,
+  output logic [BusFullWidth-1:0] data_o,
   output logic idle_o, // the entire read pipeline is idle
   input arb_err_i, // a catastrophic arbitration error was observed
 
@@ -739,8 +738,6 @@ module flash_phy_rd
   logic [BusFullWidth-1:0] data_out_pre_xor;
   assign data_out_pre_xor = data_err_o ? inv_data_integ : data_out_intg;
 
-  assign data_ctrl_o = data_out_pre_xor;
-
   logic [BusBankAddrW-1:0] addr_xor_muxed;
   logic [BusBankAddrW-1:0] fifo_addr_xor_muxed;
   logic [BusBankAddrW-1:0] buf_addr_xor_muxed;
@@ -763,7 +760,7 @@ module flash_phy_rd
     .out_o(data_out_xor_buf)
   );
 
-  assign data_host_o = {data_out_pre_xor[BusFullWidth-1:BusWidth], data_out_xor_buf};
+  assign data_o = {data_out_pre_xor[BusFullWidth-1:BusWidth], data_out_xor_buf};
 
   // add plaintext decoding here
   // plaintext error
