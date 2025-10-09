@@ -43,12 +43,17 @@ module flash_phy_rd_buffers import flash_phy_pkg::*; (
       out_o.attr <= Invalid;
       out_o.err <= '0;
     end else if (!en_i && out_o.attr != Invalid) begin
+      out_o.data <= '0;
+      out_o.addr <= '0;
       out_o.attr <= Invalid;
       out_o.err <= '0;
     end else if (wipe_i && en_i) begin
+      out_o.data <= '0;
+      out_o.addr <= '0;
       out_o.attr <= Invalid;
       out_o.err <= '0;
     end else if (alloc_i && en_i) begin
+      out_o.data <= '0;
       out_o.addr <= addr_i;
       out_o.part <= part_i;
       out_o.info_sel <= info_sel_i;
