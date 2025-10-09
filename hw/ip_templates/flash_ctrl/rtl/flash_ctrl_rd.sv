@@ -177,7 +177,13 @@ module flash_ctrl_rd import flash_ctrl_pkg::*; (
     .data_intg_o(inv_data_integ)
   );
 
-  assign data_o = ~err_sel | (err_sel & op_err_o.rd_err) ? flash_data_i : inv_data_integ;
+  logic [BusWidth-1:0] addr_xor;
+  logic [BusWidth-1:0] data_xor;
+
+  assign addr_xor = {{(BusWidth-BusBankAddrW){1'b0}}, int_addr[BusBankAddrW-1:0]};
+  assign data_xor = flash_data_i[BusWidth-1:0] ^ addr_xor;
+
+  assign data_o = ~err_sel | (err_sel & op_err_o.rd_err) ? {flash_data_i[BusFullWidth-1:BusWidth], data_xor} : inv_data_integ;
 
   assign op_err_o = op_err_q | op_err_d;
 
