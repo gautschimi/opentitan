@@ -92,6 +92,9 @@ module flash_phy_rd
   logic [PlainDataWidth-1:0] muxed_data;
   logic muxed_err;
 
+  // muxed, de-scrambled and xored data with ECC
+  logic [WidthMultiple-1:0][BusFullWidth-1:0]  data_xor_ecc;
+
   // muxed data valid signal that takes scrambling into consideration
   logic data_valid;
 
@@ -144,7 +147,7 @@ module flash_phy_rd
     // on that buffer.
     assign buf_invalid[i] = (read_buf[i].attr == Invalid) |
                             (read_buf[i].attr == Valid &
-                            read_buf[i].err &
+                            (read_buf[i].err) &
                             ~buf_dependency[i]);
   end
 
@@ -246,7 +249,8 @@ module flash_phy_rd
       .addr_i(flash_word_addr),
       .part_i(part_i),
       .info_sel_i(info_sel_i),
-      .data_i(muxed_data),
+      .data_i(data_xor_ecc),
+      .intg_i(muxed_data[DataWidth +: PlainIntgWidth]),
       .out_o(read_buf[i])
     );
   end
@@ -615,6 +619,10 @@ module flash_phy_rd
   // scrambled data to de-scramble
   assign scrambled_data_o = fifo_data[DataWidth-1:0] ^ mask;
 
+  // apply scramble_hint
+  logic [DataWidth-1:0] descrambled_data;
+  assign descrambled_data = descrambled_data_i ^ mask;
+
   // muxed responses
   // When "forward" is true, there is nothing ahead in the pipeline, directly feed data
   // and error forward.
@@ -622,10 +630,10 @@ module flash_phy_rd
   // dependent on the scramble hint.
   assign muxed_data = forward      ? data_int :
                       hint_descram ? {fifo_data[PlainDataWidth-1 -: PlainIntgWidth],
-                                      descrambled_data_i ^ mask} :
+                                      descrambled_data} :
                                      fifo_data;
-  assign muxed_err  = forward       ? data_err :
-                      ~hint_forward ? data_err_q : '0;
+  assign muxed_err = forward       ? data_err :
+                     ~hint_forward ? data_err_q : '0;
 
   // muxed data valid
   // if no de-scramble required, return data on read complete
@@ -634,6 +642,32 @@ module flash_phy_rd
   // if descramble is not required, but there are transactions ahead, return from fifo when ready
   assign data_valid = forward | ~hint_forward & fifo_data_ready;
 
+  // pack data into bus words, append ECC, and xor data with address
+  logic [WidthMultiple-1:0][BusWidth-1:0] bus_words_packed;
+  logic [WidthMultiple-1:0][BusWidth-1:0] bus_words_xor_addr;
+  logic [WidthMultiple-1:0][BusFullWidth-1:0] bus_words_xor_in;
+  logic [WidthMultiple-1:0][BusWidth-1:0] bus_words_xor_out;
+
+  for (genvar idx = 0; idx < WidthMultiple; idx++) begin : gen_words
+    assign bus_words_packed[idx] = muxed_data[idx*BusWidth +: BusWidth];
+    // use the tlul integrity module directly for bus integrity
+    // SEC_CM: MEM.BUS.INTEGRITY
+    tlul_data_integ_enc u_bus_intg (
+      .data_i(bus_words_packed[idx]),
+      .data_intg_o(bus_words_xor_in[idx])
+    );
+    if (WidthMultiple == 1) begin : gen_rd_single
+      assign bus_words_xor_addr[idx] = {{(BusWidth-BusBankAddrW){1'b0}}, fifo_addr_xor};
+    end else begin : gen_rd_multiple
+      logic [LsbAddrBit-1:0] offset;
+      assign offset = idx;
+      assign bus_words_xor_addr[idx] = {{(BusWidth-BusBankAddrW){1'b0}}, {fifo_addr_xor, offset}};
+    end
+    // xor data with addr for increased data to address correlation
+    assign bus_words_xor_out[idx] = bus_words_xor_in[idx][BusWidth-1:0] ^ bus_words_xor_addr[idx];
+
+    assign data_xor_ecc[idx] = {bus_words_xor_in[idx][BusFullWidth-1:BusWidth], bus_words_xor_out[idx]};
+  end
 
   /////////////////////////////////
   // Response
@@ -641,10 +675,10 @@ module flash_phy_rd
 
   logic flash_rsp_match;
   logic [NumBuf-1:0] buf_rsp_match;
-  logic [PlainDataWidth-1:0] buf_rsp_data;
+  logic [WidthMultiple-1:0][BusFullWidth-1:0] buf_rsp_data;
+  logic [PlainIntgWidth-1:0] buf_rsp_intg;
   logic [BankAddrW-1:0] buf_addr_xor;
   logic buf_rsp_err;
-
 
   // update buffers
   // When forwarding, update entry stored in alloc_q
@@ -666,111 +700,60 @@ module flash_phy_rd
 
   // select among the buffers
   always_comb begin
-    buf_rsp_data = muxed_data;
+    buf_rsp_data = '0;
+    buf_rsp_intg = '0;
     buf_rsp_err = '0;
     buf_addr_xor = '0;
     for (int i = 0; i < NumBuf; i++) begin
       if (buf_rsp_match[i]) begin
         buf_rsp_data = read_buf[i].data;
+        buf_rsp_intg = read_buf[i].intg;
         buf_addr_xor = read_buf[i].addr;
         buf_rsp_err = buf_rsp_err | read_buf[i].err;
       end
     end
   end
 
-  logic [PlainDataWidth-1:0] data_out_muxed;
-  assign data_out_muxed = |buf_rsp_match ? buf_rsp_data : muxed_data;
+  logic [WidthMultiple-1:0][BusFullWidth-1:0] data_out_muxed;
+  logic [PlainIntgWidth-1:0] intg_out_muxed;
+  assign data_out_muxed = |buf_rsp_match ? buf_rsp_data : data_xor_ecc;
+  assign intg_out_muxed = |buf_rsp_match ? buf_rsp_intg : muxed_data[DataWidth +: PlainIntgWidth];
 
-  logic [BusFullWidth-1:0] data_out_intg;
-  if (WidthMultiple == 1) begin : gen_width_one_rd
-    // When multiple is 1, just pass the read through directly
-    logic unused_word_sel;
+  logic [BusFullWidth-1:0] data_out;
+  logic [BusBankAddrW-1:0] addr_xor_muxed;
+  logic [BusWidth-1:0] bus_addr_xor;
 
-    // use the tlul integrity module directly for bus integrity
-    // SEC_CM: MEM.BUS.INTEGRITY
-    tlul_data_integ_enc u_bus_intg (
-      .data_i(data_out_muxed[DataWidth-1:0]),
-      .data_intg_o(data_out_intg)
-    );
-
-    assign unused_word_sel = rsp_fifo_rdata.word_sel;
-
-  end else begin : gen_rd
-    // Re-arrange data into packed array to pick the correct one
-    logic [WidthMultiple-1:0][BusWidth-1:0] bus_words_packed;
-    logic [WidthMultiple-1:0][BusFullWidth-1:0] bus_words_packed_intg;
-    logic [WidthMultiple-1:0][BusFullWidth-1:0] bus_words_packed_intg_buf;
-    assign bus_words_packed = data_out_muxed[DataWidth-1:0];
-
-    for (genvar i = 0; i < WidthMultiple; i++) begin: gen_bus_words_intg
-      // use the tlul integrity module directly for bus integrity
-      // SEC_CM: MEM.BUS.INTEGRITY
-      tlul_data_integ_enc u_bus_intg (
-        .data_i(bus_words_packed[i]),
-        .data_intg_o(bus_words_packed_intg[i])
-      );
-
-      // This primitive is used to place a size-only constraint on the
-      // buffers to act as a synthesis optimization barrier.
-      prim_buf #(
-        .Width(BusFullWidth)
-      ) u_prim_buf_intg (
-        .in_i(bus_words_packed_intg[i]),
-        .out_o(bus_words_packed_intg_buf[i])
-      );
-    end
-    // Mux based on selected word.
-    assign data_out_intg = bus_words_packed_intg_buf[rsp_fifo_rdata.word_sel];
-
+  assign addr_xor_muxed = |buf_rsp_match ? buf_addr_xor : fifo_addr_xor;
+  if (WidthMultiple == 1) begin : gen_width_single
+    assign bus_addr_xor = {{(BusWidth-BusBankAddrW){1'b0}}, addr_xor_muxed};
+  end else begin : gen_width_multiple
+    assign bus_addr_xor = {{(BusWidth-BusBankAddrW){1'b0}}, addr_xor_muxed, rsp_fifo_rdata.word_sel};
   end
 
-  // On a data_err_o, send back '1 with data integrity tag on top of this data.
-  logic [BusFullWidth-1:0] inv_data_integ;
-  tlul_data_integ_enc u_bus_inv_data_intg (
-    .data_i({BusWidth{1'b1}}),
-    .data_intg_o(inv_data_integ)
-  );
-
-  logic [BusFullWidth-1:0] data_out_pre_xor;
-  assign data_out_pre_xor = data_err_o ? inv_data_integ : data_out_intg;
-
-  logic [BusBankAddrW-1:0] addr_xor_muxed;
-  logic [BusBankAddrW-1:0] fifo_addr_xor_muxed;
-  logic [BusBankAddrW-1:0] buf_addr_xor_muxed;
-
-  assign fifo_addr_xor_muxed = {fifo_addr_xor, rsp_fifo_rdata.word_sel};
-  assign buf_addr_xor_muxed = {buf_addr_xor, rsp_fifo_rdata.word_sel};
-
-  assign addr_xor_muxed = |buf_rsp_match ? buf_addr_xor_muxed : fifo_addr_xor_muxed;
-
-  logic [BusWidth-1:0] data_out_xor;
-  logic [BusWidth-1:0] data_out_xor_buf;
-  assign data_out_xor =
-      data_out_pre_xor[BusWidth-1:0] ^ {{(BusWidth-BusBankAddrW){1'b0}}, addr_xor_muxed};
-
-  // Buffer to ensure that synthesis tool does not optimize the XOR.
-  prim_buf #(
-    .Width(BusWidth)
-  ) u_prim_buf_data_xor_out (
-    .in_i(data_out_xor),
-    .out_o(data_out_xor_buf)
-  );
-
-  assign data_o = {data_out_pre_xor[BusFullWidth-1:BusWidth], data_out_xor_buf};
-
-  // add plaintext decoding here
-  // plaintext error
+  // plaintext integrity error detection.
+  // 1. reconstruct the full word
+  // 2. remove the addr xor
+  // 3. compute the integrity
   logic intg_err_pre, intg_err;
   logic [DataWidth-1:0] unused_data;
+  logic [DataWidth-1:0] data_intg_check_in;
   logic [3:0] unused_intg;
   logic [3:0] truncated_intg;
-
+  if (WidthMultiple == 1) begin : gen_intg_single
+    assign data_intg_check_in = data_out_muxed[BusWidth-1:0] ^ {{(BusWidth-BusBankAddrW){1'b0}}, addr_xor_muxed};
+  end else begin : gen_intg_multiple
+    for (genvar idx = 0; idx < WidthMultiple; idx++) begin : gen_words
+      logic [LsbAddrBit-1:0] offset;
+      assign offset = idx;
+      assign data_intg_check_in[BusWidth*idx +: BusWidth] = data_out_muxed[idx][BusWidth-1:0] ^ {{(BusWidth-BusBankAddrW){1'b0}}, addr_xor_muxed, offset};
+    end
+  end
   prim_secded_hamming_72_64_enc u_plain_enc (
-    .data_i(data_out_muxed[DataWidth-1:0]),
+    .data_i(data_intg_check_in),
     .data_o({unused_intg, truncated_intg, unused_data})
   );
   assign intg_err_pre = rsp_fifo_rdata.intg_ecc_en ?
-                        truncated_intg != data_out_muxed[DataWidth +: PlainIntgWidth] :
+                        truncated_intg != intg_out_muxed :
                         '0;
 
   prim_sec_anchor_buf #(
@@ -779,6 +762,19 @@ module flash_phy_rd
     .in_i(intg_err_pre),
     .out_o(intg_err)
   );
+
+  // On a data_err_o, send back '1 with data integrity tag on top of this data.
+  // data is xored with addr
+  logic [BusFullWidth-BusWidth-1:0] inv_data_intg;
+  logic [BusWidth-1:0] inv_data;
+  tlul_data_integ_enc u_bus_inv_data_intg (
+    .data_i({BusWidth{1'b1}}),
+    .data_intg_o({inv_data_intg, inv_data})
+  );
+
+  assign data_out = (WidthMultiple == 1) ? data_out_muxed[0] : data_out_muxed[rsp_fifo_rdata.word_sel];
+
+  assign data_o = data_err_o ? {inv_data_intg, inv_data ^ bus_addr_xor} : data_out;
 
   // whenever the response is coming from the buffer, the error is never set
   assign data_valid_o = flash_rsp_match | (|buf_rsp_match);
@@ -830,7 +826,7 @@ module flash_phy_rd
   // Whenever forward is true, hint_descram should always be 0
   `ASSERT(ForwardCheck_A, forward |-> hint_descram == '0)
 
-  // Whenever response is coming from buffer, ecc error cannot be set
+  // Whenever response is coming from buffer, eccs error cannot be set
   `ASSERT(BufferMatchEcc_A, |buf_rsp_match |-> muxed_err == '0)
 
   // The read storage depth and mask depth should always be the same after popping
