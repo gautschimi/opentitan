@@ -30,13 +30,15 @@ module flash_phy_rd_buffers import flash_phy_pkg::*; (
   input [BankAddrW-1:0] addr_i,
   input part_i,
   input [InfoTypesWidth-1:0] info_sel_i,
-  input [PlainDataWidth-1:0] data_i,
+  input [WidthMultiple-1:0][BusFullWidth-1:0] data_i,
+  input [PlainIntgWidth-1:0] intg_i,
   output rd_buf_t out_o
 );
 
   always_ff @(posedge clk_i or negedge rst_ni) begin
     if (!rst_ni) begin
       out_o.data <= '0;
+      out_o.intg <= '0;
       out_o.addr <= '0;
       out_o.part <= flash_ctrl_top_specific_pkg::FlashPartData;
       out_o.info_sel <= '0;
@@ -44,16 +46,23 @@ module flash_phy_rd_buffers import flash_phy_pkg::*; (
       out_o.err <= '0;
     end else if (!en_i && out_o.attr != Invalid) begin
       out_o.data <= '0;
+      out_o.intg <= '0;
       out_o.addr <= '0;
+      out_o.info_sel <= '0;
+      out_o.part <= '0;
       out_o.attr <= Invalid;
       out_o.err <= '0;
     end else if (wipe_i && en_i) begin
       out_o.data <= '0;
+      out_o.intg <= '0;
       out_o.addr <= '0;
+      out_o.info_sel <= '0;
+      out_o.part <= '0;
       out_o.attr <= Invalid;
       out_o.err <= '0;
     end else if (alloc_i && en_i) begin
       out_o.data <= '0;
+      out_o.intg <= '0;
       out_o.addr <= addr_i;
       out_o.part <= part_i;
       out_o.info_sel <= info_sel_i;
@@ -61,6 +70,7 @@ module flash_phy_rd_buffers import flash_phy_pkg::*; (
       out_o.err <= '0;
     end else if (update_i && en_i) begin
       out_o.data <= data_i;
+      out_o.intg <= intg_i;
       out_o.attr <= Valid;
       out_o.err <= err_i;
     end

@@ -72,7 +72,8 @@ package flash_phy_pkg;
   } rd_buf_attr_e;
 
   typedef struct packed {
-    logic [PlainDataWidth-1:0] data;
+    logic [WidthMultiple-1:0][BusFullWidth-1:0] data;
+    logic [PlainIntgWidth-1:0] intg;
     logic [BankAddrW-1:0] addr; // all address bits preserved to pick return portion
     logic part;
     logic [InfoTypesWidth-1:0] info_sel;
