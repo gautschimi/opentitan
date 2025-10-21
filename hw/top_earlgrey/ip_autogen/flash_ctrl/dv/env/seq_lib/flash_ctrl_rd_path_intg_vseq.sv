@@ -27,9 +27,9 @@ class flash_ctrl_rd_path_intg_vseq extends flash_ctrl_legacy_base_vseq;
       cfg.clk_rst_vif.wait_clks(10);
       for (int k = 0; k < 4; k++) begin
         path1 = $sformatf({"tb.dut.u_eflash.gen_flash_cores[0].u_core",
-                           ".u_rd.gen_bufs[%0d].u_rd_buf.data_i[35:28]"}, k);
+                           ".u_rd.gen_bufs[%0d].u_rd_buf.intg_i"}, k);
         path2 = $sformatf({"tb.dut.u_eflash.gen_flash_cores[1].u_core",
-                           ".u_rd.gen_bufs[%0d].u_rd_buf.data_i[35:28]"}, k);
+                           ".u_rd.gen_bufs[%0d].u_rd_buf.intg_i"}, k);
         `DV_CHECK(uvm_hdl_force(path1, $urandom()))
         `DV_CHECK(uvm_hdl_force(path2, $urandom()))
       end
