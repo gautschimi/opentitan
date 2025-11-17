@@ -314,16 +314,16 @@ module flash_phy_prog import flash_phy_pkg::*; (
   assign block_data_o = packed_data;
 
   // ECC handling
-  localparam int PlainDataEccWidth = DataWidth + 8;
-
+  logic [PlainIntgWidth-1:0] icv;
+  logic [EccWidth - PlainIntgWidth-1:0] unused_ecc_part;
+  logic [DataWidth-1:0] unused_data;
   logic [FullDataWidth-1:0] ecc_data;
-  logic [PlainDataEccWidth-1:0] plain_data_w_ecc;
   logic [PlainIntgWidth-1:0] plain_data_ecc;
   always_ff @(posedge clk_i or negedge rst_ni) begin
     if (!rst_ni) begin
       plain_data_ecc <= '1;
     end else if (plain_ecc_en) begin
-      plain_data_ecc <= plain_data_w_ecc[DataWidth +: PlainIntgWidth];
+      plain_data_ecc <= icv;
     end
   end
 
@@ -343,13 +343,12 @@ module flash_phy_prog import flash_phy_pkg::*; (
   // from packed data to masked/scrambled data based on software configuration).
   // The actual plain data ECC is explicitly captured during this process when
   // it is required.
+  // The Msbs of the ecc are used because they include the parity bit which guarantees that every
+  // bit contributes to the integrity check value
   prim_secded_hamming_72_64_enc u_plain_enc (
     .data_i(packed_data),
-    .data_o(plain_data_w_ecc)
+    .data_o({icv, unused_ecc_part, unused_data})
   );
-
-  logic unused_data;
-  assign unused_data = |plain_data_w_ecc;
 
   // pad the remaining bits with '1' if ecc is not used.
   assign data_o = ecc_i ? ecc_data : {{EccWidth{1'b1}}, ecc_data_in};

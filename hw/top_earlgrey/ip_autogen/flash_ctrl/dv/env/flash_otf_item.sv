@@ -139,13 +139,13 @@ class flash_otf_item extends uvm_object;
       data = raw_fq[i][FlashDataWidth-1:0];
       if (ecc_en) begin
         data_with_icv = prim_secded_pkg::prim_secded_hamming_72_64_enc(raw_fq[i][63:0]);
-        `uvm_info("icv", $sformatf("ICV:%4b", data_with_icv[67:64]), UVM_DEBUG)
+        `uvm_info("icv", $sformatf("ICV:%4b", data_with_icv[71:68]), UVM_DEBUG)
         if (add_icv_err) begin
           `uvm_info("icv_debug", $sformatf("before:%4b after:%4b",
-                    data_with_icv[67:64], ~data_with_icv[67:64]), UVM_DEBUG)
-          data_with_icv[67:64] = ~data_with_icv[67:64];
+                    data_with_icv[71:68], ~data_with_icv[71:68]), UVM_DEBUG)
+          data_with_icv[71:68] = ~data_with_icv[67:64];
           // if icv is all zero, use different pattern for error
-          if (data_with_icv[67:64] == 'h0) data_with_icv[67:64] = 4'b1100;
+          if (data_with_icv[71:68] == 'h0) data_with_icv[71:68] = 4'b1100;
         end
       end else begin
         // We only need bit 67:64 when ecc_en == true.
@@ -158,7 +158,7 @@ class flash_otf_item extends uvm_object;
       end
       if (ecc_en) begin
         fq.push_back(
-           prim_secded_pkg::prim_secded_hamming_76_68_enc({data_with_icv[67:64], data[63:0]}));
+           prim_secded_pkg::prim_secded_hamming_76_68_enc({data_with_icv[71:68], data[63:0]}));
       end else begin
         fq.push_back({12'h0, data});
       end
@@ -227,7 +227,7 @@ class flash_otf_item extends uvm_object;
         // check icv
         if (ecc_en) begin
           data_with_icv = prim_secded_pkg::prim_secded_hamming_72_64_enc(data[63:0]);
-          icv_err = (data_with_icv[67:64] != data[67:64]);
+          icv_err = (data_with_icv[71:68] != data[67:64]);
           ecc_err |= (dec68.err[1] | icv_err);
           if (dec68.err[1] | icv_err) begin
             err_addr = addr << 3;

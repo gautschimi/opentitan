@@ -741,8 +741,8 @@ module flash_phy_rd
   logic intg_err_pre, intg_err;
   logic [DataWidth-1:0] unused_data;
   logic [DataWidth-1:0] data_intg_check_in;
-  logic [3:0] unused_intg;
-  logic [3:0] truncated_intg;
+  logic [PlainIntgWidth-1:0] truncated_intg;
+  logic [EccWidth - PlainIntgWidth-1:0] unused_intg;
   if (WidthMultiple == 1) begin : gen_intg_single
     assign data_intg_check_in = data_out_muxed[BusWidth-1:0] ^ {{(BusWidth-BusBankAddrW){1'b0}}, addr_xor_muxed};
   end else begin : gen_intg_multiple
@@ -754,7 +754,7 @@ module flash_phy_rd
   end
   prim_secded_hamming_72_64_enc u_plain_enc (
     .data_i(data_intg_check_in),
-    .data_o({unused_intg, truncated_intg, unused_data})
+    .data_o({truncated_intg, unused_intg, unused_data})
   );
   assign intg_err_pre = rsp_fifo_rdata.intg_ecc_en ?
                         truncated_intg != intg_out_muxed :

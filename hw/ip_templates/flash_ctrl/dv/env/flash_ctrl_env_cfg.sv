@@ -652,7 +652,7 @@ class flash_ctrl_env_cfg extends cip_base_env_cfg #(
     // program fully via backdoor
     // TODO: review this later.
     // it has to be write(aligned_addr, instead of write64(aligned_addr
-    mem_bkdr_util_h[partition][bank].write64(aligned_addr, {intg_data[3:0], data});
+    mem_bkdr_util_h[partition][bank].write64(aligned_addr, {intg_data[7:4], data});
 
     // Update scoreboard memory model with this back-door write
     if (scb_check) begin

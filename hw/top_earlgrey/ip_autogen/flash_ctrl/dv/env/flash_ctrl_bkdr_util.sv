@@ -121,7 +121,7 @@ class flash_ctrl_bkdr_util extends mem_bkdr_util;
 
     // ecc functions used are hardcoded to a fixed sized.
     ecc_72 = prim_secded_pkg::prim_secded_hamming_72_64_enc(data[63:0]);
-    ecc_76 = prim_secded_pkg::prim_secded_hamming_76_68_enc({ecc_72[67:64], masked_data[63:0]});
+    ecc_76 = prim_secded_pkg::prim_secded_hamming_76_68_enc({ecc_72[71:68], masked_data[63:0]});
     byte_addr = word_addr << FlashDataByteWidth;
     write(byte_addr, ecc_76);
   endfunction
