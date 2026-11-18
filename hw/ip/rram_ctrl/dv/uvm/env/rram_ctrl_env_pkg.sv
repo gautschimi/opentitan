@@ -23,8 +23,13 @@ package rram_ctrl_env_pkg;
   import otp_ctrl_pkg::NvmKeyWidth;
 
   import rram_ctrl_pkg::DataWidth;
+  import rram_ctrl_pkg::TotalDataPages;
+  import rram_ctrl_pkg::TotalInfoPages;
   import rram_ctrl_pkg::OtpStartPage;
   import rram_ctrl_pkg::NumOutstandingRdReq;
+  import rram_ctrl_pkg::rram_op_e;
+  import rram_ctrl_pkg::RramOpRead, rram_ctrl_pkg::RramOpWrite, rram_ctrl_pkg::RramOpRewrite;
+  import rram_ctrl_pkg::rram_part_e, rram_ctrl_pkg::RramPartData, rram_ctrl_pkg::RramPartInfo;
 
   import nvm_otp_key_agent_pkg::nvm_otp_key_agent_cfg;
   import nvm_otp_key_agent_pkg::nvm_otp_key_rsp_seq_item;
