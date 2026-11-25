@@ -12,6 +12,9 @@ class rram_ctrl_env_cfg extends cip_base_env_cfg #(.RAL_T(rram_ctrl_core_reg_blo
   // Config for an agent that acts as otp_ctrl and responds to key requests from rram_ctrl
   rand nvm_otp_key_agent_cfg m_key_agent_cfg;
 
+  // Config for a passive agent that monitors transactions between rram_ctrl and rram_macro
+  rram_macro_agent_cfg m_macro_agent_cfg;
+
   // Name of the RAL model tied to the host interface (tl_host), which accesses the
   // RRAM data array.
   string host_ral_name = "rram_ctrl_host_reg_block";
@@ -24,6 +27,10 @@ class rram_ctrl_env_cfg extends cip_base_env_cfg #(.RAL_T(rram_ctrl_core_reg_blo
   int unsigned m_wr_fifo_depth;
   int unsigned m_rd_fifo_depth;
 
+  // A timeout that should be used in the scoreboard to wait until any pending transactions have
+  // cleared.
+  int unsigned m_phase_end_timeout_ns = 100;
+
   // Standard SV/UVM methods
   extern function new(string name="");
 
@@ -34,7 +41,6 @@ class rram_ctrl_env_cfg extends cip_base_env_cfg #(.RAL_T(rram_ctrl_core_reg_blo
 
   // Class specific methods
   extern function void initialize(bit inherit_ral_models = 1'b0);
-
 endclass : rram_ctrl_env_cfg
 
 
@@ -42,6 +48,7 @@ function rram_ctrl_env_cfg::new(string name="");
   super.new(name);
 
   m_key_agent_cfg = nvm_otp_key_agent_cfg::type_id::create("m_key_agent_cfg");
+  m_macro_agent_cfg = rram_macro_agent_cfg::type_id::create("m_macro_agent_cfg");
 endfunction : new
 
 function void rram_ctrl_env_cfg::set_is_active(bit active);

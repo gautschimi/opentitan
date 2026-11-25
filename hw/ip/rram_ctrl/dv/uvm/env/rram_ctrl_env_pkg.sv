@@ -35,6 +35,11 @@ package rram_ctrl_env_pkg;
   import nvm_otp_key_agent_pkg::nvm_otp_key_rsp_seq_item;
   import nvm_otp_key_agent_pkg::nvm_otp_key_agent;
 
+  import rram_macro_agent_pkg::rram_macro_agent;
+  import rram_macro_agent_pkg::rram_macro_agent_cfg;
+  import rram_macro_agent_pkg::rram_macro_req_seq_item;
+  import rram_macro_agent_pkg::rram_macro_rsp_seq_item;
+
   import rram_ctrl_reg_pkg::NumRegions;
   import rram_ctrl_reg_pkg::NumDataPages;
   import rram_ctrl_reg_pkg::NumInfoPages;

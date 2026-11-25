@@ -13,6 +13,9 @@ class rram_ctrl_env extends cip_base_env #(
   // An agent that acts as otp_ctrl and responds to key requests from rram_ctrl
   nvm_otp_key_agent m_key_agent;
 
+  // A passive agent that monitors transactions between rram_ctrl and rram_macro
+  rram_macro_agent m_macro_agent;
+
   // A backdoor utility for the data array
   rram_ctrl_bkdr_util m_data_bkdr_util;
 
@@ -43,7 +46,11 @@ function void rram_ctrl_env::build_phase(uvm_phase phase);
   end
   if (!uvm_config_db#(virtual nvm_otp_key_if)::get(this, "", "otp_key_vif",
                                                    cfg.m_key_agent_cfg.m_vif)) begin
-    `uvm_fatal("no_vif", "Failed to get otp_key_vif from uvm_config_db.")
+    `uvm_fatal("no_vif", "Failed to get nvm_otp_key_vif from uvm_config_db.")
+  end
+  if (!uvm_config_db#(virtual rram_macro_if)::get(this, "", "macro_vif",
+                                                  cfg.m_macro_agent_cfg.m_vif)) begin
+    `uvm_fatal("no_vif", "Failed to get rram_macro_if from uvm_config_db.")
   end
 
   // Retrieve the DUT's configured FIFO depths
@@ -75,6 +82,9 @@ function void rram_ctrl_env::build_phase(uvm_phase phase);
   m_key_agent = nvm_otp_key_agent::type_id::create("m_key_agent", this);
   uvm_config_db#(nvm_otp_key_agent_cfg)::set(this, "m_key_agent", "cfg", cfg.m_key_agent_cfg);
 
+  m_macro_agent = rram_macro_agent::type_id::create("m_macro_agent", this);
+  uvm_config_db#(rram_macro_agent_cfg)::set(this, "m_macro_agent", "cfg", cfg.m_macro_agent_cfg);
+
   m_data_bkdr_util = new("m_data_bkdr_util", data_bkdr_path, data_depth, data_nbits,
                          mem_bkdr_util_pkg::ErrDetectionNone);
   m_info_bkdr_util = new("m_info_bkdr_util", info_bkdr_path, info_depth, info_nbits,
@@ -93,4 +103,5 @@ function void rram_ctrl_env::connect_phase(uvm_phase phase);
   end
 
   m_key_agent.monitor.analysis_port.connect(scoreboard.m_otp_key_txn_imp);
+  m_macro_agent.m_analysis_port.connect(scoreboard.m_macro_imp);
 endfunction : connect_phase
