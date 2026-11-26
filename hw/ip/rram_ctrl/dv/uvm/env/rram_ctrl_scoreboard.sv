@@ -744,6 +744,31 @@ function void rram_ctrl_scoreboard::on_mem_access(tl_seq_item item, tl_phase_e t
           // Either way, push the 32-bit word into m_fifo_pending and increment next_a_bus_idx
           // (supporting pipelining if the hardware does)
           m_fifo_pending.push_back('{known: 1, value: item.a_data});
+
+          // If this is the last 32-bit word of an RRAM word, the RTL can send the whole RRAM word to
+          // the macro as soon as it has accepted the A channel (before the D channel handshake), so
+          // queue up the expected macro write now. The bus words are the last bus_words_per_word
+          // items of m_fifo_pending (popped on the D channel below).
+          if ((m_fifo_ptr.next_a_bus_idx + 1) % bus_words_per_word == 0) begin
+            int unsigned        word_idx = m_fifo_ptr.next_a_bus_idx / bus_words_per_word;
+            int unsigned        first = m_fifo_pending.size() - bus_words_per_word;
+            bit [DataWidth-1:0] wdata;
+            macro_write_t       macro_write;
+
+            for (int unsigned i = 0; i < bus_words_per_word; i++) begin
+              wdata[i * 32 +: 32] = m_fifo_pending[first + i].value;
+            end
+
+            macro_write = '{partition: m_fifo_ptr.partition,
+                            word_idx:  word_idx,
+                            wdata:     encode_word(m_fifo_ptr.partition, word_idx, wdata)};
+            `uvm_info("macro_write",
+                      $sformatf("Added expected macro write to queue: %0s",
+                                sprint_macro_write_t(macro_write)),
+                      UVM_HIGH)
+            m_pending_macro_writes.push_back(macro_write);
+          end
+
           m_fifo_ptr.next_a_bus_idx++;
         end
       end
@@ -758,8 +783,7 @@ function void rram_ctrl_scoreboard::on_mem_access(tl_seq_item item, tl_phase_e t
           // of the bus_words_per_word words for an RRAM word, tell the partition model that the
           // RRAM word write is complete, popping the 32-bit items from m_write_fifo_pending.
           if ((m_fifo_ptr.next_d_bus_idx + 1) % bus_words_per_word == 0) begin
-            bit [DataWidth-1:0] wdata, enc_wdata, snooped_word;
-            macro_write_t       macro_write;
+            bit [DataWidth-1:0] wdata, enc_wdata;
 
             // There should be at least bus_words_per_word items in m_write_fifo_pending
             if (m_fifo_pending.size() < bus_words_per_word) begin
@@ -779,16 +803,7 @@ function void rram_ctrl_scoreboard::on_mem_access(tl_seq_item item, tl_phase_e t
 
             partition_model.complete_write_operation(next_word_idx, enc_wdata);
 
-            macro_write = '{partition: m_fifo_ptr.partition,
-                            word_idx:  next_word_idx,
-                            wdata: enc_wdata};
-            `uvm_info("macro_write",
-                      $sformatf("Added expected macro write to queue: %0s",
-                                sprint_macro_write_t(macro_write)),
-                      UVM_HIGH)
-
-            // Queue up the write transaction we expect to be sent to the macro
-            m_pending_macro_writes.push_back(macro_write);
+            // (The expected macro write for this RRAM word was queued on the A channel above.)
           end
 
           // Either way, increment next_d_bus_idx
