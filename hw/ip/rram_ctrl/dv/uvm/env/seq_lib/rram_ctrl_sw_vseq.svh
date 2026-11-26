@@ -198,6 +198,12 @@ task rram_ctrl_sw_vseq::body();
     return;
   end
 
+  // Clear OP_STATUS (DONE and ERR are set by HW and cleared by SW). Otherwise DONE is still set
+  // from the previous operation and the spinwait below returns immediately.
+  m_ral.op_status.write(m_status, 0);
+  if (m_abort) m_status = UVM_NOT_OK;
+  if (m_status != UVM_IS_OK) return;
+
   // Start by writing ADDR
   m_ral.addr.start.set(m_addr);
   m_ral.addr.update(m_status);
