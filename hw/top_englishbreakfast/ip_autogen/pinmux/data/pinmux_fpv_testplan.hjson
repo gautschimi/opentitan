@@ -37,6 +37,24 @@
       stage: V1
       tests: ["pinmux_assert"]
     }
+    {
+      name: InSelLegal_A
+      desc: "Register `periph_insel` only holds values that are legal for this peripheral input."
+      stage: V1
+      tests: ["pinmux_assert"]
+    }
+    {
+      name: InSelWrite_A
+      desc: "A write of a legal value to register `periph_insel` takes effect in the next cycle."
+      stage: V1
+      tests: ["pinmux_assert"]
+    }
+    {
+      name: InSelWriteIllegal_A
+      desc: "A write of an illegal value to register `periph_insel` leaves the select unchanged."
+      stage: V1
+      tests: ["pinmux_assert"]
+    }
 
     // `mio_to_periph_o` backward tests
     // Symbolic variable `periph_sel_i` is used to select a specific `mio_to_periph_o` pin.
@@ -106,6 +124,24 @@
       desc: '''When register `mio_outsel` is set to a value that is not legal for this pad or
             at least (3 + Number of periph out) and is not in sleep mode, the corresponding
             `mio_out_o` must be 0.'''
+      stage: V1
+      tests: ["pinmux_assert"]
+    }
+    {
+      name: OutSelLegal_A
+      desc: "Register `mio_outsel` only holds values that are legal for this pad."
+      stage: V1
+      tests: ["pinmux_assert"]
+    }
+    {
+      name: OutSelWrite_A
+      desc: "A write of a legal value to register `mio_outsel` takes effect in the next cycle."
+      stage: V1
+      tests: ["pinmux_assert"]
+    }
+    {
+      name: OutSelWriteIllegal_A
+      desc: "A write of an illegal value to register `mio_outsel` leaves the select unchanged."
       stage: V1
       tests: ["pinmux_assert"]
     }

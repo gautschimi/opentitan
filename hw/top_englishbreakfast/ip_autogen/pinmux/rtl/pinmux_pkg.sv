@@ -148,6 +148,148 @@ package pinmux_pkg;
     38'h3fffffffff  //  0: IOA0
   };
 
+  // Width of the MIO_PERIPH_INSEL and MIO_OUTSEL fields.
+  parameter int MioInselWidth  = $clog2(NMioPads + 2);
+  parameter int MioOutselWidth = $clog2(NMioPeriphOut + 3);
+
+  // Reset values of the MIO_PERIPH_INSEL CSRs. LSB corresponds to lowest index.
+  parameter logic [NMioPeriphIn-1:0][MioInselWidth-1:0] MioPeriphInselResval = {
+    6'd0, // 37: usbdev_sense
+    6'd0, // 36: flash_ctrl_tdi
+    6'd0, // 35: flash_ctrl_tms
+    6'd0, // 34: flash_ctrl_tck
+    6'd0, // 33: uart1_rx
+    6'd0, // 32: uart0_rx
+    6'd0, // 31: gpio0_gpio[31]
+    6'd0, // 30: gpio0_gpio[30]
+    6'd0, // 29: gpio0_gpio[29]
+    6'd0, // 28: gpio0_gpio[28]
+    6'd0, // 27: gpio0_gpio[27]
+    6'd0, // 26: gpio0_gpio[26]
+    6'd0, // 25: gpio0_gpio[25]
+    6'd0, // 24: gpio0_gpio[24]
+    6'd0, // 23: gpio0_gpio[23]
+    6'd0, // 22: gpio0_gpio[22]
+    6'd0, // 21: gpio0_gpio[21]
+    6'd0, // 20: gpio0_gpio[20]
+    6'd0, // 19: gpio0_gpio[19]
+    6'd0, // 18: gpio0_gpio[18]
+    6'd0, // 17: gpio0_gpio[17]
+    6'd0, // 16: gpio0_gpio[16]
+    6'd0, // 15: gpio0_gpio[15]
+    6'd0, // 14: gpio0_gpio[14]
+    6'd0, // 13: gpio0_gpio[13]
+    6'd0, // 12: gpio0_gpio[12]
+    6'd0, // 11: gpio0_gpio[11]
+    6'd0, // 10: gpio0_gpio[10]
+    6'd0, //  9: gpio0_gpio[9]
+    6'd0, //  8: gpio0_gpio[8]
+    6'd0, //  7: gpio0_gpio[7]
+    6'd0, //  6: gpio0_gpio[6]
+    6'd0, //  5: gpio0_gpio[5]
+    6'd0, //  4: gpio0_gpio[4]
+    6'd0, //  3: gpio0_gpio[3]
+    6'd0, //  2: gpio0_gpio[2]
+    6'd0, //  1: gpio0_gpio[1]
+    6'd0  //  0: gpio0_gpio[0]
+  };
+
+  // Reset values of the MIO_OUTSEL CSRs. LSB corresponds to lowest index.
+  parameter logic [NMioPads-1:0][MioOutselWidth-1:0] MioOutselResval = {
+    6'd2, // 46: IOR13
+    6'd2, // 45: IOR12
+    6'd2, // 44: IOR11
+    6'd2, // 43: IOR10
+    6'd2, // 42: IOR7
+    6'd2, // 41: IOR6
+    6'd2, // 40: IOR5
+    6'd2, // 39: IOR4
+    6'd2, // 38: IOR3
+    6'd2, // 37: IOR2
+    6'd2, // 36: IOR1
+    6'd2, // 35: IOR0
+    6'd2, // 34: IOC12
+    6'd2, // 33: IOC11
+    6'd2, // 32: IOC10
+    6'd2, // 31: IOC9
+    6'd2, // 30: IOC8
+    6'd2, // 29: IOC7
+    6'd2, // 28: IOC6
+    6'd2, // 27: IOC5
+    6'd2, // 26: IOC4
+    6'd2, // 25: IOC3
+    6'd2, // 24: IOC2
+    6'd2, // 23: IOC1
+    6'd2, // 22: IOC0
+    6'd2, // 21: IOB12
+    6'd2, // 20: IOB11
+    6'd2, // 19: IOB10
+    6'd2, // 18: IOB9
+    6'd2, // 17: IOB8
+    6'd2, // 16: IOB7
+    6'd2, // 15: IOB6
+    6'd2, // 14: IOB5
+    6'd2, // 13: IOB4
+    6'd2, // 12: IOB3
+    6'd2, // 11: IOB2
+    6'd2, // 10: IOB1
+    6'd2, //  9: IOB0
+    6'd2, //  8: IOA8
+    6'd2, //  7: IOA7
+    6'd2, //  6: IOA6
+    6'd2, //  5: IOA5
+    6'd2, //  4: IOA4
+    6'd2, //  3: IOA3
+    6'd2, //  2: IOA2
+    6'd2, //  1: IOA1
+    6'd2  //  0: IOA0
+  };
+
+  // The select CSRs only store the legal values, as an index into the legal values of each
+  // select. The functions below convert between select value and index. They are called with a
+  // constant legality mask, so they reduce to small lookup tables.
+  parameter int SelMaskWidth = 2**((MioInselWidth > MioOutselWidth) ? MioInselWidth :
+                                                                       MioOutselWidth);
+
+  // Index width needed to store the legal values of a select.
+  function automatic int unsigned sel_idx_width(logic [SelMaskWidth-1:0] legal);
+    int unsigned num_legal = 0;
+    for (int unsigned i = 0; i < SelMaskWidth; i++) begin
+      num_legal += legal[i];
+    end
+    return (num_legal > 1) ? $clog2(num_legal) : 1;
+  endfunction
+
+  // Index of a legal select value.
+  // Returns 0 for illegal values, these must be filtered out by the caller.
+  function automatic int unsigned sel_encode(logic [SelMaskWidth-1:0] legal, int unsigned value);
+    int unsigned rank = 0;
+    sel_encode = 0;
+    for (int unsigned i = 0; i < SelMaskWidth; i++) begin
+      if (legal[i]) begin
+        if (value == i) begin
+          sel_encode = rank;
+        end
+        rank++;
+      end
+    end
+  endfunction
+
+  // Select value of an index.
+  // Returns 0 for indices beyond the number of legal values.
+  function automatic int unsigned sel_decode(logic [SelMaskWidth-1:0] legal, int unsigned idx);
+    int unsigned rank = 0;
+    sel_decode = 0;
+    for (int unsigned i = 0; i < SelMaskWidth; i++) begin
+      if (legal[i]) begin
+        if (idx == rank) begin
+          sel_decode = i;
+        end
+        rank++;
+      end
+    end
+  endfunction
+
   // Reset values of the MIO_PAD_ATTR CSRs defined by the top. LSB corresponds to lowest index.
   parameter pad_attr_t [NMioPads-1:0] MioPadAttrResval = {
     pad_attr_t'{default: '0}, // 46: IOR13

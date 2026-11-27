@@ -37,10 +37,12 @@ package pinmux_reg_pkg;
 
   typedef struct packed {
     logic [5:0]  q;
+    logic        qe;
   } pinmux_reg2hw_mio_periph_insel_mreg_t;
 
   typedef struct packed {
     logic [5:0]  q;
+    logic        qe;
   } pinmux_reg2hw_mio_outsel_mreg_t;
 
   typedef struct packed {
@@ -182,6 +184,14 @@ package pinmux_reg_pkg;
   } pinmux_reg2hw_wkup_cause_mreg_t;
 
   typedef struct packed {
+    logic [5:0]  d;
+  } pinmux_hw2reg_mio_periph_insel_mreg_t;
+
+  typedef struct packed {
+    logic [5:0]  d;
+  } pinmux_hw2reg_mio_outsel_mreg_t;
+
+  typedef struct packed {
     struct packed {
       logic [3:0]  d;
     } drive_strength;
@@ -264,9 +274,9 @@ package pinmux_reg_pkg;
 
   // Register -> HW type
   typedef struct packed {
-    pinmux_reg2hw_alert_test_reg_t alert_test; // [2387:2386]
-    pinmux_reg2hw_mio_periph_insel_mreg_t [37:0] mio_periph_insel; // [2385:2158]
-    pinmux_reg2hw_mio_outsel_mreg_t [46:0] mio_outsel; // [2157:1876]
+    pinmux_reg2hw_alert_test_reg_t alert_test; // [2472:2471]
+    pinmux_reg2hw_mio_periph_insel_mreg_t [37:0] mio_periph_insel; // [2470:2205]
+    pinmux_reg2hw_mio_outsel_mreg_t [46:0] mio_outsel; // [2204:1876]
     pinmux_reg2hw_mio_pad_attr_mreg_t [46:0] mio_pad_attr; // [1875:748]
     pinmux_reg2hw_dio_pad_attr_mreg_t [13:0] dio_pad_attr; // [747:412]
     pinmux_reg2hw_mio_pad_sleep_status_mreg_t [46:0] mio_pad_sleep_status; // [411:365]
@@ -284,6 +294,8 @@ package pinmux_reg_pkg;
 
   // HW -> register type
   typedef struct packed {
+    pinmux_hw2reg_mio_periph_insel_mreg_t [37:0] mio_periph_insel; // [1501:1274]
+    pinmux_hw2reg_mio_outsel_mreg_t [46:0] mio_outsel; // [1273:992]
     pinmux_hw2reg_mio_pad_attr_mreg_t [46:0] mio_pad_attr; // [991:334]
     pinmux_hw2reg_dio_pad_attr_mreg_t [13:0] dio_pad_attr; // [333:138]
     pinmux_hw2reg_mio_pad_sleep_status_mreg_t [46:0] mio_pad_sleep_status; // [137:44]
@@ -817,6 +829,176 @@ package pinmux_reg_pkg;
   parameter logic [31:0] PINMUX_ALERT_TEST_RESVAL = 32'h 80000000;
   parameter logic [0:0] PINMUX_ALERT_TEST_FATAL_FAULT_RESVAL = 1'h 0;
   parameter logic [0:0] PINMUX_ALERT_TEST_REGWEN_RESVAL = 1'h 1;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_0_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_0_IN_0_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_1_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_1_IN_1_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_2_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_2_IN_2_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_3_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_3_IN_3_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_4_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_4_IN_4_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_5_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_5_IN_5_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_6_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_6_IN_6_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_7_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_7_IN_7_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_8_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_8_IN_8_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_9_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_9_IN_9_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_10_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_10_IN_10_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_11_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_11_IN_11_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_12_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_12_IN_12_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_13_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_13_IN_13_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_14_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_14_IN_14_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_15_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_15_IN_15_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_16_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_16_IN_16_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_17_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_17_IN_17_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_18_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_18_IN_18_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_19_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_19_IN_19_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_20_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_20_IN_20_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_21_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_21_IN_21_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_22_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_22_IN_22_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_23_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_23_IN_23_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_24_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_24_IN_24_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_25_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_25_IN_25_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_26_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_26_IN_26_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_27_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_27_IN_27_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_28_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_28_IN_28_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_29_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_29_IN_29_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_30_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_30_IN_30_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_31_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_31_IN_31_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_32_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_32_IN_32_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_33_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_33_IN_33_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_34_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_34_IN_34_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_35_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_35_IN_35_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_36_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_36_IN_36_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_37_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_PERIPH_INSEL_37_IN_37_RESVAL = 6'h 0;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_0_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_0_OUT_0_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_1_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_1_OUT_1_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_2_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_2_OUT_2_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_3_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_3_OUT_3_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_4_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_4_OUT_4_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_5_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_5_OUT_5_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_6_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_6_OUT_6_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_7_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_7_OUT_7_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_8_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_8_OUT_8_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_9_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_9_OUT_9_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_10_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_10_OUT_10_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_11_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_11_OUT_11_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_12_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_12_OUT_12_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_13_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_13_OUT_13_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_14_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_14_OUT_14_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_15_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_15_OUT_15_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_16_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_16_OUT_16_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_17_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_17_OUT_17_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_18_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_18_OUT_18_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_19_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_19_OUT_19_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_20_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_20_OUT_20_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_21_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_21_OUT_21_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_22_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_22_OUT_22_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_23_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_23_OUT_23_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_24_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_24_OUT_24_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_25_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_25_OUT_25_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_26_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_26_OUT_26_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_27_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_27_OUT_27_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_28_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_28_OUT_28_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_29_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_29_OUT_29_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_30_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_30_OUT_30_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_31_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_31_OUT_31_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_32_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_32_OUT_32_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_33_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_33_OUT_33_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_34_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_34_OUT_34_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_35_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_35_OUT_35_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_36_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_36_OUT_36_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_37_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_37_OUT_37_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_38_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_38_OUT_38_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_39_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_39_OUT_39_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_40_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_40_OUT_40_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_41_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_41_OUT_41_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_42_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_42_OUT_42_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_43_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_43_OUT_43_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_44_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_44_OUT_44_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_45_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_45_OUT_45_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_46_RESVAL = 6'h 2;
+  parameter logic [5:0] PINMUX_MIO_OUTSEL_46_OUT_46_RESVAL = 6'h 2;
   parameter logic [23:0] PINMUX_MIO_PAD_ATTR_0_RESVAL = 24'h 0;
   parameter logic [0:0] PINMUX_MIO_PAD_ATTR_0_INVERT_0_RESVAL = 1'h 0;
   parameter logic [0:0] PINMUX_MIO_PAD_ATTR_0_VIRTUAL_OD_EN_0_RESVAL = 1'h 0;

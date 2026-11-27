@@ -78,7 +78,9 @@ Likewise, the output select signals `mio_outsel[*]` can also be used to constant
 The output enable and the associated data signal (i.e. `periph_to_mio` and `periph_to_mio_oe`) are indexed with the same select signal to allow the peripheral hardware to determine the pad direction instead of demoting that control to SW.
 
 The muxing matrix can be sparse, i.e., the top-level configuration can restrict which pads a peripheral input can select and which peripheral outputs a pad can select.
-Selecting a pad that is not legal for a peripheral input ties that input to 0, and selecting a peripheral output that is not legal for a pad puts that pad into high-Z state.
+The select registers only store legal values.
+Writes of a pad that is not legal for a peripheral input, or of a peripheral output that is not legal for a pad, are ignored and the register keeps its previous value.
+A read therefore returns the select in effect.
 
 ${"##"} Retention Logic
 

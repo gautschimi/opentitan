@@ -4,7 +4,8 @@
 
 <%!
   from ipgen.pinmux_gen import (INSEL_NUM_CONST, OUTSEL_NUM_CONST, check_params, gen_index_label,
-                                mio_insel_legal, mio_outsel_legal, pad_attr_sv, sv_hex)
+                                mio_insel_legal, mio_insel_resvals, mio_outsel_legal,
+                                mio_outsel_resvals, pad_attr_sv, sv_hex)
 %>\
 package pinmux_pkg;
 
@@ -88,6 +89,69 @@ package pinmux_pkg;
     ${sv_hex(mask, outsel_w)}${f"  // {label}" if loop.last else f", // {label}"}
 % endfor
   };
+
+  // Width of the MIO_PERIPH_INSEL and MIO_OUTSEL fields.
+  parameter int MioInselWidth  = $clog2(NMioPads + 2);
+  parameter int MioOutselWidth = $clog2(NMioPeriphOut + 3);
+
+  // Reset values of the MIO_PERIPH_INSEL CSRs. LSB corresponds to lowest index.
+  parameter logic [NMioPeriphIn-1:0][MioInselWidth-1:0] MioPeriphInselResval = {
+% for label, val in gen_index_label(list(zip([p["name"] for p in mio_periph_ins], mio_insel_resvals(mio_periph_ins))))[::-1]:
+    ${f"{(n_mio_pads + 1).bit_length()}'d{val}"}${f"  // {label}" if loop.last else f", // {label}"}
+% endfor
+  };
+
+  // Reset values of the MIO_OUTSEL CSRs. LSB corresponds to lowest index.
+  parameter logic [NMioPads-1:0][MioOutselWidth-1:0] MioOutselResval = {
+% for label, val in gen_index_label(list(zip(mio_pad_names, mio_outsel_resvals(n_mio_pads, mio_periph_outs))))[::-1]:
+    ${f"{(n_mio_periph_out + 2).bit_length()}'d{val}"}${f"  // {label}" if loop.last else f", // {label}"}
+% endfor
+  };
+
+  // The select CSRs only store the legal values, as an index into the legal values of each
+  // select. The functions below convert between select value and index. They are called with a
+  // constant legality mask, so they reduce to small lookup tables.
+  parameter int SelMaskWidth = 2**((MioInselWidth > MioOutselWidth) ? MioInselWidth :
+                                                                       MioOutselWidth);
+
+  // Index width needed to store the legal values of a select.
+  function automatic int unsigned sel_idx_width(logic [SelMaskWidth-1:0] legal);
+    int unsigned num_legal = 0;
+    for (int unsigned i = 0; i < SelMaskWidth; i++) begin
+      num_legal += legal[i];
+    end
+    return (num_legal > 1) ? $clog2(num_legal) : 1;
+  endfunction
+
+  // Index of a legal select value.
+  // Returns 0 for illegal values, these must be filtered out by the caller.
+  function automatic int unsigned sel_encode(logic [SelMaskWidth-1:0] legal, int unsigned value);
+    int unsigned rank = 0;
+    sel_encode = 0;
+    for (int unsigned i = 0; i < SelMaskWidth; i++) begin
+      if (legal[i]) begin
+        if (value == i) begin
+          sel_encode = rank;
+        end
+        rank++;
+      end
+    end
+  endfunction
+
+  // Select value of an index.
+  // Returns 0 for indices beyond the number of legal values.
+  function automatic int unsigned sel_decode(logic [SelMaskWidth-1:0] legal, int unsigned idx);
+    int unsigned rank = 0;
+    sel_decode = 0;
+    for (int unsigned i = 0; i < SelMaskWidth; i++) begin
+      if (legal[i]) begin
+        if (idx == rank) begin
+          sel_decode = i;
+        end
+        rank++;
+      end
+    end
+  endfunction
 
   // Reset values of the MIO_PAD_ATTR CSRs defined by the top. LSB corresponds to lowest index.
   parameter pad_attr_t [NMioPads-1:0] MioPadAttrResval = {

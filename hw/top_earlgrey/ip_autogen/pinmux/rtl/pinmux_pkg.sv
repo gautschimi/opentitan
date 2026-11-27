@@ -230,6 +230,230 @@ package pinmux_pkg;
     119'h00000000000000000000000000800f  //  0: SPI_HOST_D0
   };
 
+  // Width of the MIO_PERIPH_INSEL and MIO_OUTSEL fields.
+  parameter int MioInselWidth  = $clog2(NMioPads + 2);
+  parameter int MioOutselWidth = $clog2(NMioPeriphOut + 3);
+
+  // Reset values of the MIO_PERIPH_INSEL CSRs. LSB corresponds to lowest index.
+  parameter logic [NMioPeriphIn-1:0][MioInselWidth-1:0] MioPeriphInselResval = {
+    6'd0, // 105: sysrst_ctrl_lid_open
+    6'd0, // 104: sysrst_ctrl_pwrb_in
+    6'd0, // 103: sysrst_ctrl_key2_in
+    6'd0, // 102: sysrst_ctrl_key1_in
+    6'd0, // 101: sysrst_ctrl_key0_in
+    6'd0, // 100: sysrst_ctrl_ac_present
+    6'd0, //  99: i3c1_rstdet_sda
+    6'd0, //  98: i3c1_rstdet_scl
+    6'd0, //  97: i3c0_rstdet_sda
+    6'd0, //  96: i3c0_rstdet_scl
+    6'd0, //  95: uart3_rx
+    6'd0, //  94: uart2_rx
+    6'd0, //  93: uart1_rx
+    6'd0, //  92: uart0_rx
+    6'd0, //  91: spi_device_tpm_csb
+    6'd13, //  90: spi_device_csb
+    6'd12, //  89: spi_device_sck
+    6'd0, //  88: usbdev_sense
+    6'd58, //  87: sysrst_ctrl_flash_wp_l
+    6'd57, //  86: sysrst_ctrl_ec_rst_l
+    6'd0, //  85: i3c1_sda
+    6'd0, //  84: i3c1_scl
+    6'd0, //  83: i3c0_sda
+    6'd0, //  82: i3c0_scl
+    6'd0, //  81: i2c2_scl
+    6'd0, //  80: i2c2_sda
+    6'd0, //  79: i2c1_scl
+    6'd0, //  78: i2c1_sda
+    6'd0, //  77: i2c0_scl
+    6'd0, //  76: i2c0_sda
+    6'd0, //  75: gpio1_gpio[31]
+    6'd0, //  74: gpio1_gpio[30]
+    6'd0, //  73: gpio1_gpio[29]
+    6'd0, //  72: gpio1_gpio[28]
+    6'd0, //  71: gpio1_gpio[27]
+    6'd0, //  70: gpio1_gpio[26]
+    6'd0, //  69: gpio1_gpio[25]
+    6'd0, //  68: gpio1_gpio[24]
+    6'd0, //  67: gpio1_gpio[23]
+    6'd0, //  66: gpio1_gpio[22]
+    6'd0, //  65: gpio1_gpio[21]
+    6'd0, //  64: gpio1_gpio[20]
+    6'd0, //  63: gpio1_gpio[19]
+    6'd0, //  62: gpio1_gpio[18]
+    6'd0, //  61: gpio1_gpio[17]
+    6'd0, //  60: gpio1_gpio[16]
+    6'd0, //  59: gpio1_gpio[15]
+    6'd0, //  58: gpio1_gpio[14]
+    6'd0, //  57: gpio1_gpio[13]
+    6'd0, //  56: gpio1_gpio[12]
+    6'd0, //  55: gpio1_gpio[11]
+    6'd0, //  54: gpio1_gpio[10]
+    6'd0, //  53: gpio1_gpio[9]
+    6'd0, //  52: gpio1_gpio[8]
+    6'd0, //  51: gpio1_gpio[7]
+    6'd0, //  50: gpio1_gpio[6]
+    6'd0, //  49: gpio1_gpio[5]
+    6'd0, //  48: gpio1_gpio[4]
+    6'd0, //  47: gpio1_gpio[3]
+    6'd0, //  46: gpio1_gpio[2]
+    6'd0, //  45: gpio1_gpio[1]
+    6'd0, //  44: gpio1_gpio[0]
+    6'd0, //  43: gpio0_gpio[31]
+    6'd0, //  42: gpio0_gpio[30]
+    6'd0, //  41: gpio0_gpio[29]
+    6'd0, //  40: gpio0_gpio[28]
+    6'd0, //  39: gpio0_gpio[27]
+    6'd0, //  38: gpio0_gpio[26]
+    6'd0, //  37: gpio0_gpio[25]
+    6'd0, //  36: gpio0_gpio[24]
+    6'd0, //  35: gpio0_gpio[23]
+    6'd0, //  34: gpio0_gpio[22]
+    6'd0, //  33: gpio0_gpio[21]
+    6'd0, //  32: gpio0_gpio[20]
+    6'd0, //  31: gpio0_gpio[19]
+    6'd0, //  30: gpio0_gpio[18]
+    6'd0, //  29: gpio0_gpio[17]
+    6'd0, //  28: gpio0_gpio[16]
+    6'd0, //  27: gpio0_gpio[15]
+    6'd0, //  26: gpio0_gpio[14]
+    6'd0, //  25: gpio0_gpio[13]
+    6'd0, //  24: gpio0_gpio[12]
+    6'd0, //  23: gpio0_gpio[11]
+    6'd0, //  22: gpio0_gpio[10]
+    6'd0, //  21: gpio0_gpio[9]
+    6'd0, //  20: gpio0_gpio[8]
+    6'd0, //  19: gpio0_gpio[7]
+    6'd0, //  18: gpio0_gpio[6]
+    6'd0, //  17: gpio0_gpio[5]
+    6'd0, //  16: gpio0_gpio[4]
+    6'd0, //  15: gpio0_gpio[3]
+    6'd0, //  14: gpio0_gpio[2]
+    6'd0, //  13: gpio0_gpio[1]
+    6'd0, //  12: gpio0_gpio[0]
+    6'd11, //  11: spi_device_sd[3]
+    6'd10, //  10: spi_device_sd[2]
+    6'd9, //   9: spi_device_sd[1]
+    6'd8, //   8: spi_device_sd[0]
+    6'd0, //   7: spi_host1_sd[3]
+    6'd0, //   6: spi_host1_sd[2]
+    6'd0, //   5: spi_host1_sd[1]
+    6'd0, //   4: spi_host1_sd[0]
+    6'd5, //   3: spi_host0_sd[3]
+    6'd4, //   2: spi_host0_sd[2]
+    6'd3, //   1: spi_host0_sd[1]
+    6'd2  //   0: spi_host0_sd[0]
+  };
+
+  // Reset values of the MIO_OUTSEL CSRs. LSB corresponds to lowest index.
+  parameter logic [NMioPads-1:0][MioOutselWidth-1:0] MioOutselResval = {
+    7'd2, // 60: IOR13
+    7'd2, // 59: IOR12
+    7'd2, // 58: IOR11
+    7'd2, // 57: IOR10
+    7'd90, // 56: IOR9
+    7'd89, // 55: IOR8
+    7'd2, // 54: IOR7
+    7'd2, // 53: IOR6
+    7'd2, // 52: IOR5
+    7'd2, // 51: IOR4
+    7'd2, // 50: IOR3
+    7'd2, // 49: IOR2
+    7'd2, // 48: IOR1
+    7'd2, // 47: IOR0
+    7'd2, // 46: IOC12
+    7'd2, // 45: IOC11
+    7'd2, // 44: IOC10
+    7'd2, // 43: IOC9
+    7'd2, // 42: IOC8
+    7'd2, // 41: IOC7
+    7'd2, // 40: IOC6
+    7'd2, // 39: IOC5
+    7'd2, // 38: IOC4
+    7'd2, // 37: IOC3
+    7'd2, // 36: IOC2
+    7'd2, // 35: IOC1
+    7'd2, // 34: IOC0
+    7'd2, // 33: IOB12
+    7'd2, // 32: IOB11
+    7'd2, // 31: IOB10
+    7'd2, // 30: IOB9
+    7'd2, // 29: IOB8
+    7'd2, // 28: IOB7
+    7'd2, // 27: IOB6
+    7'd2, // 26: IOB5
+    7'd2, // 25: IOB4
+    7'd2, // 24: IOB3
+    7'd2, // 23: IOB2
+    7'd2, // 22: IOB1
+    7'd2, // 21: IOB0
+    7'd2, // 20: IOA8
+    7'd2, // 19: IOA7
+    7'd2, // 18: IOA6
+    7'd2, // 17: IOA5
+    7'd2, // 16: IOA4
+    7'd2, // 15: IOA3
+    7'd2, // 14: IOA2
+    7'd2, // 13: IOA1
+    7'd2, // 12: IOA0
+    7'd2, // 11: SPI_DEV_CS_L
+    7'd2, // 10: SPI_DEV_CLK
+    7'd14, //  9: SPI_DEV_D3
+    7'd13, //  8: SPI_DEV_D2
+    7'd12, //  7: SPI_DEV_D1
+    7'd11, //  6: SPI_DEV_D0
+    7'd92, //  5: SPI_HOST_CS_L
+    7'd91, //  4: SPI_HOST_CLK
+    7'd6, //  3: SPI_HOST_D3
+    7'd5, //  2: SPI_HOST_D2
+    7'd4, //  1: SPI_HOST_D1
+    7'd3  //  0: SPI_HOST_D0
+  };
+
+  // The select CSRs only store the legal values, as an index into the legal values of each
+  // select. The functions below convert between select value and index. They are called with a
+  // constant legality mask, so they reduce to small lookup tables.
+  parameter int SelMaskWidth = 2**((MioInselWidth > MioOutselWidth) ? MioInselWidth :
+                                                                       MioOutselWidth);
+
+  // Index width needed to store the legal values of a select.
+  function automatic int unsigned sel_idx_width(logic [SelMaskWidth-1:0] legal);
+    int unsigned num_legal = 0;
+    for (int unsigned i = 0; i < SelMaskWidth; i++) begin
+      num_legal += legal[i];
+    end
+    return (num_legal > 1) ? $clog2(num_legal) : 1;
+  endfunction
+
+  // Index of a legal select value.
+  // Returns 0 for illegal values, these must be filtered out by the caller.
+  function automatic int unsigned sel_encode(logic [SelMaskWidth-1:0] legal, int unsigned value);
+    int unsigned rank = 0;
+    sel_encode = 0;
+    for (int unsigned i = 0; i < SelMaskWidth; i++) begin
+      if (legal[i]) begin
+        if (value == i) begin
+          sel_encode = rank;
+        end
+        rank++;
+      end
+    end
+  endfunction
+
+  // Select value of an index.
+  // Returns 0 for indices beyond the number of legal values.
+  function automatic int unsigned sel_decode(logic [SelMaskWidth-1:0] legal, int unsigned idx);
+    int unsigned rank = 0;
+    sel_decode = 0;
+    for (int unsigned i = 0; i < SelMaskWidth; i++) begin
+      if (legal[i]) begin
+        if (idx == rank) begin
+          sel_decode = i;
+        end
+        rank++;
+      end
+    end
+  endfunction
+
   // Reset values of the MIO_PAD_ATTR CSRs defined by the top. LSB corresponds to lowest index.
   parameter pad_attr_t [NMioPads-1:0] MioPadAttrResval = {
     pad_attr_t'{default: '0}, // 60: IOR13

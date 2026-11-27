@@ -461,6 +461,54 @@ module pinmux
     end
   end
 
+  //////////////////////////////////
+  // MIO input and output selects //
+  //////////////////////////////////
+
+  // The MIO_PERIPH_INSEL and MIO_OUTSEL CSRs are external.
+  // Only the legal values are stored, as an index into the legal values of each select.
+  // Writes of illegal values are ignored, so a read returns the select in effect.
+  logic [NMioPeriphIn-1:0][MioInselWidth-1:0] mio_periph_insel;
+  logic [NMioPads-1:0][MioOutselWidth-1:0]    mio_outsel;
+
+  for (genvar k = 0; k < NMioPeriphIn; k++) begin : gen_mio_periph_insel
+    localparam logic [SelMaskWidth-1:0] Legal = SelMaskWidth'(MioPeriphInselLegal[k]);
+    localparam int unsigned IdxWidth = sel_idx_width(Legal);
+    localparam logic [IdxWidth-1:0] IdxResval =
+        IdxWidth'(sel_encode(Legal, int'(MioPeriphInselResval[k])));
+
+    logic [IdxWidth-1:0] idx_q;
+    always_ff @(posedge clk_i or negedge rst_ni) begin
+      if (!rst_ni) begin
+        idx_q <= IdxResval;
+      end else if (reg2hw.mio_periph_insel[k].qe && Legal[reg2hw.mio_periph_insel[k].q]) begin
+        idx_q <= IdxWidth'(sel_encode(Legal, int'(reg2hw.mio_periph_insel[k].q)));
+      end
+    end
+
+    assign mio_periph_insel[k]          = MioInselWidth'(sel_decode(Legal, int'(idx_q)));
+    assign hw2reg.mio_periph_insel[k].d = mio_periph_insel[k];
+  end
+
+  for (genvar k = 0; k < NMioPads; k++) begin : gen_mio_outsel
+    localparam logic [SelMaskWidth-1:0] Legal = SelMaskWidth'(MioOutselLegal[k]);
+    localparam int unsigned IdxWidth = sel_idx_width(Legal);
+    localparam logic [IdxWidth-1:0] IdxResval =
+        IdxWidth'(sel_encode(Legal, int'(MioOutselResval[k])));
+
+    logic [IdxWidth-1:0] idx_q;
+    always_ff @(posedge clk_i or negedge rst_ni) begin
+      if (!rst_ni) begin
+        idx_q <= IdxResval;
+      end else if (reg2hw.mio_outsel[k].qe && Legal[reg2hw.mio_outsel[k].q]) begin
+        idx_q <= IdxWidth'(sel_encode(Legal, int'(reg2hw.mio_outsel[k].q)));
+      end
+    end
+
+    assign mio_outsel[k]          = MioOutselWidth'(sel_decode(Legal, int'(idx_q)));
+    assign hw2reg.mio_outsel[k].d = mio_outsel[k];
+  end
+
   /////////////////////
   // MIO Input Muxes //
   /////////////////////
@@ -479,7 +527,7 @@ module pinmux
     assign mio_mux_legal = mio_mux & AlignedMuxSize'(MioPeriphInselLegal[k]);
 
     // Index using configured insel.
-    assign mio_to_periph_o[k] = mio_mux_legal[reg2hw.mio_periph_insel[k].q];
+    assign mio_to_periph_o[k] = mio_mux_legal[mio_periph_insel[k]];
   end
 
   //////////////////////
@@ -501,11 +549,11 @@ module pinmux
     // Check individual sleep enable status bits
     assign mio_out[k] = reg2hw.mio_pad_sleep_status[k].q ?
                         mio_out_retreg_q[k]              :
-                        periph_data_mux_legal[reg2hw.mio_outsel[k].q];
+                        periph_data_mux_legal[mio_outsel[k]];
 
     assign mio_oe[k]  = reg2hw.mio_pad_sleep_status[k].q ?
                         mio_oe_retreg_q[k]               :
-                        periph_oe_mux_legal[reg2hw.mio_outsel[k].q];
+                        periph_oe_mux_legal[mio_outsel[k]];
 
     // latch state when going to sleep
     // 0: drive low

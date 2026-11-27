@@ -543,7 +543,9 @@
                   count:        "NMioPeriphIn",
                   compact:      "false",
                   swaccess:     "rw",
-                  hwaccess:     "hro",
+                  hwaccess:     "hrw",
+                  hwext:        "true",
+                  hwqe:         "true",
                   regwen:       "MIO_PERIPH_INSEL_REGWEN",
                   regwen_multi: "true",
                   cname:        "IN",
@@ -553,12 +555,15 @@
                       desc: '''
                       0: tie constantly to zero, 1: tie constantly to 1,
                       >=2: MIO pads (i.e., add 2 to the native MIO pad index).
-                      Selecting a pad that is not legal for this peripheral input ties it
-                      constantly to zero.
+                      Writes of a pad that is not legal for this peripheral input are ignored
+                      and the register keeps its previous value.
                       '''
                       resval: ${render_resval(mio_insel_resvals(mio_periph_ins))},
                     }
                   ]
+                  // Writes of illegal values are ignored, so the read value differs from the
+                  // written one.
+                  tags: ["excl:CsrNonInitTests:CsrExclCheck"]
                 }
     },
 
@@ -590,7 +595,9 @@
                   count:        "NMioPads",
                   compact:      "false",
                   swaccess:     "rw",
-                  hwaccess:     "hro",
+                  hwaccess:     "hrw",
+                  hwext:        "true",
+                  hwqe:         "true",
                   regwen:       "MIO_OUTSEL_REGWEN",
                   regwen_multi: "true",
                   cname:        "OUT",
@@ -600,8 +607,8 @@
                       desc: '''
                       0: tie constantly to zero, 1: tie constantly to 1, 2: high-Z,
                       >=3: peripheral outputs (i.e., add 3 to the native peripheral pad index).
-                      Selecting a peripheral output that is not legal for this pad puts the pad
-                      into high-Z.
+                      Writes of a peripheral output that is not legal for this pad are ignored
+                      and the register keeps its previous value.
                       '''
                       resval: ${render_resval(mio_outsel_resvals(n_mio_pads, mio_periph_outs))},
                     }

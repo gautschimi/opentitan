@@ -241,117 +241,155 @@ module pinmux_reg_top (
   logic mio_periph_insel_regwen_37_we;
   logic mio_periph_insel_regwen_37_qs;
   logic mio_periph_insel_regwen_37_wd;
+  logic mio_periph_insel_0_re;
   logic mio_periph_insel_0_we;
   logic [5:0] mio_periph_insel_0_qs;
   logic [5:0] mio_periph_insel_0_wd;
+  logic mio_periph_insel_1_re;
   logic mio_periph_insel_1_we;
   logic [5:0] mio_periph_insel_1_qs;
   logic [5:0] mio_periph_insel_1_wd;
+  logic mio_periph_insel_2_re;
   logic mio_periph_insel_2_we;
   logic [5:0] mio_periph_insel_2_qs;
   logic [5:0] mio_periph_insel_2_wd;
+  logic mio_periph_insel_3_re;
   logic mio_periph_insel_3_we;
   logic [5:0] mio_periph_insel_3_qs;
   logic [5:0] mio_periph_insel_3_wd;
+  logic mio_periph_insel_4_re;
   logic mio_periph_insel_4_we;
   logic [5:0] mio_periph_insel_4_qs;
   logic [5:0] mio_periph_insel_4_wd;
+  logic mio_periph_insel_5_re;
   logic mio_periph_insel_5_we;
   logic [5:0] mio_periph_insel_5_qs;
   logic [5:0] mio_periph_insel_5_wd;
+  logic mio_periph_insel_6_re;
   logic mio_periph_insel_6_we;
   logic [5:0] mio_periph_insel_6_qs;
   logic [5:0] mio_periph_insel_6_wd;
+  logic mio_periph_insel_7_re;
   logic mio_periph_insel_7_we;
   logic [5:0] mio_periph_insel_7_qs;
   logic [5:0] mio_periph_insel_7_wd;
+  logic mio_periph_insel_8_re;
   logic mio_periph_insel_8_we;
   logic [5:0] mio_periph_insel_8_qs;
   logic [5:0] mio_periph_insel_8_wd;
+  logic mio_periph_insel_9_re;
   logic mio_periph_insel_9_we;
   logic [5:0] mio_periph_insel_9_qs;
   logic [5:0] mio_periph_insel_9_wd;
+  logic mio_periph_insel_10_re;
   logic mio_periph_insel_10_we;
   logic [5:0] mio_periph_insel_10_qs;
   logic [5:0] mio_periph_insel_10_wd;
+  logic mio_periph_insel_11_re;
   logic mio_periph_insel_11_we;
   logic [5:0] mio_periph_insel_11_qs;
   logic [5:0] mio_periph_insel_11_wd;
+  logic mio_periph_insel_12_re;
   logic mio_periph_insel_12_we;
   logic [5:0] mio_periph_insel_12_qs;
   logic [5:0] mio_periph_insel_12_wd;
+  logic mio_periph_insel_13_re;
   logic mio_periph_insel_13_we;
   logic [5:0] mio_periph_insel_13_qs;
   logic [5:0] mio_periph_insel_13_wd;
+  logic mio_periph_insel_14_re;
   logic mio_periph_insel_14_we;
   logic [5:0] mio_periph_insel_14_qs;
   logic [5:0] mio_periph_insel_14_wd;
+  logic mio_periph_insel_15_re;
   logic mio_periph_insel_15_we;
   logic [5:0] mio_periph_insel_15_qs;
   logic [5:0] mio_periph_insel_15_wd;
+  logic mio_periph_insel_16_re;
   logic mio_periph_insel_16_we;
   logic [5:0] mio_periph_insel_16_qs;
   logic [5:0] mio_periph_insel_16_wd;
+  logic mio_periph_insel_17_re;
   logic mio_periph_insel_17_we;
   logic [5:0] mio_periph_insel_17_qs;
   logic [5:0] mio_periph_insel_17_wd;
+  logic mio_periph_insel_18_re;
   logic mio_periph_insel_18_we;
   logic [5:0] mio_periph_insel_18_qs;
   logic [5:0] mio_periph_insel_18_wd;
+  logic mio_periph_insel_19_re;
   logic mio_periph_insel_19_we;
   logic [5:0] mio_periph_insel_19_qs;
   logic [5:0] mio_periph_insel_19_wd;
+  logic mio_periph_insel_20_re;
   logic mio_periph_insel_20_we;
   logic [5:0] mio_periph_insel_20_qs;
   logic [5:0] mio_periph_insel_20_wd;
+  logic mio_periph_insel_21_re;
   logic mio_periph_insel_21_we;
   logic [5:0] mio_periph_insel_21_qs;
   logic [5:0] mio_periph_insel_21_wd;
+  logic mio_periph_insel_22_re;
   logic mio_periph_insel_22_we;
   logic [5:0] mio_periph_insel_22_qs;
   logic [5:0] mio_periph_insel_22_wd;
+  logic mio_periph_insel_23_re;
   logic mio_periph_insel_23_we;
   logic [5:0] mio_periph_insel_23_qs;
   logic [5:0] mio_periph_insel_23_wd;
+  logic mio_periph_insel_24_re;
   logic mio_periph_insel_24_we;
   logic [5:0] mio_periph_insel_24_qs;
   logic [5:0] mio_periph_insel_24_wd;
+  logic mio_periph_insel_25_re;
   logic mio_periph_insel_25_we;
   logic [5:0] mio_periph_insel_25_qs;
   logic [5:0] mio_periph_insel_25_wd;
+  logic mio_periph_insel_26_re;
   logic mio_periph_insel_26_we;
   logic [5:0] mio_periph_insel_26_qs;
   logic [5:0] mio_periph_insel_26_wd;
+  logic mio_periph_insel_27_re;
   logic mio_periph_insel_27_we;
   logic [5:0] mio_periph_insel_27_qs;
   logic [5:0] mio_periph_insel_27_wd;
+  logic mio_periph_insel_28_re;
   logic mio_periph_insel_28_we;
   logic [5:0] mio_periph_insel_28_qs;
   logic [5:0] mio_periph_insel_28_wd;
+  logic mio_periph_insel_29_re;
   logic mio_periph_insel_29_we;
   logic [5:0] mio_periph_insel_29_qs;
   logic [5:0] mio_periph_insel_29_wd;
+  logic mio_periph_insel_30_re;
   logic mio_periph_insel_30_we;
   logic [5:0] mio_periph_insel_30_qs;
   logic [5:0] mio_periph_insel_30_wd;
+  logic mio_periph_insel_31_re;
   logic mio_periph_insel_31_we;
   logic [5:0] mio_periph_insel_31_qs;
   logic [5:0] mio_periph_insel_31_wd;
+  logic mio_periph_insel_32_re;
   logic mio_periph_insel_32_we;
   logic [5:0] mio_periph_insel_32_qs;
   logic [5:0] mio_periph_insel_32_wd;
+  logic mio_periph_insel_33_re;
   logic mio_periph_insel_33_we;
   logic [5:0] mio_periph_insel_33_qs;
   logic [5:0] mio_periph_insel_33_wd;
+  logic mio_periph_insel_34_re;
   logic mio_periph_insel_34_we;
   logic [5:0] mio_periph_insel_34_qs;
   logic [5:0] mio_periph_insel_34_wd;
+  logic mio_periph_insel_35_re;
   logic mio_periph_insel_35_we;
   logic [5:0] mio_periph_insel_35_qs;
   logic [5:0] mio_periph_insel_35_wd;
+  logic mio_periph_insel_36_re;
   logic mio_periph_insel_36_we;
   logic [5:0] mio_periph_insel_36_qs;
   logic [5:0] mio_periph_insel_36_wd;
+  logic mio_periph_insel_37_re;
   logic mio_periph_insel_37_we;
   logic [5:0] mio_periph_insel_37_qs;
   logic [5:0] mio_periph_insel_37_wd;
@@ -496,144 +534,191 @@ module pinmux_reg_top (
   logic mio_outsel_regwen_46_we;
   logic mio_outsel_regwen_46_qs;
   logic mio_outsel_regwen_46_wd;
+  logic mio_outsel_0_re;
   logic mio_outsel_0_we;
   logic [5:0] mio_outsel_0_qs;
   logic [5:0] mio_outsel_0_wd;
+  logic mio_outsel_1_re;
   logic mio_outsel_1_we;
   logic [5:0] mio_outsel_1_qs;
   logic [5:0] mio_outsel_1_wd;
+  logic mio_outsel_2_re;
   logic mio_outsel_2_we;
   logic [5:0] mio_outsel_2_qs;
   logic [5:0] mio_outsel_2_wd;
+  logic mio_outsel_3_re;
   logic mio_outsel_3_we;
   logic [5:0] mio_outsel_3_qs;
   logic [5:0] mio_outsel_3_wd;
+  logic mio_outsel_4_re;
   logic mio_outsel_4_we;
   logic [5:0] mio_outsel_4_qs;
   logic [5:0] mio_outsel_4_wd;
+  logic mio_outsel_5_re;
   logic mio_outsel_5_we;
   logic [5:0] mio_outsel_5_qs;
   logic [5:0] mio_outsel_5_wd;
+  logic mio_outsel_6_re;
   logic mio_outsel_6_we;
   logic [5:0] mio_outsel_6_qs;
   logic [5:0] mio_outsel_6_wd;
+  logic mio_outsel_7_re;
   logic mio_outsel_7_we;
   logic [5:0] mio_outsel_7_qs;
   logic [5:0] mio_outsel_7_wd;
+  logic mio_outsel_8_re;
   logic mio_outsel_8_we;
   logic [5:0] mio_outsel_8_qs;
   logic [5:0] mio_outsel_8_wd;
+  logic mio_outsel_9_re;
   logic mio_outsel_9_we;
   logic [5:0] mio_outsel_9_qs;
   logic [5:0] mio_outsel_9_wd;
+  logic mio_outsel_10_re;
   logic mio_outsel_10_we;
   logic [5:0] mio_outsel_10_qs;
   logic [5:0] mio_outsel_10_wd;
+  logic mio_outsel_11_re;
   logic mio_outsel_11_we;
   logic [5:0] mio_outsel_11_qs;
   logic [5:0] mio_outsel_11_wd;
+  logic mio_outsel_12_re;
   logic mio_outsel_12_we;
   logic [5:0] mio_outsel_12_qs;
   logic [5:0] mio_outsel_12_wd;
+  logic mio_outsel_13_re;
   logic mio_outsel_13_we;
   logic [5:0] mio_outsel_13_qs;
   logic [5:0] mio_outsel_13_wd;
+  logic mio_outsel_14_re;
   logic mio_outsel_14_we;
   logic [5:0] mio_outsel_14_qs;
   logic [5:0] mio_outsel_14_wd;
+  logic mio_outsel_15_re;
   logic mio_outsel_15_we;
   logic [5:0] mio_outsel_15_qs;
   logic [5:0] mio_outsel_15_wd;
+  logic mio_outsel_16_re;
   logic mio_outsel_16_we;
   logic [5:0] mio_outsel_16_qs;
   logic [5:0] mio_outsel_16_wd;
+  logic mio_outsel_17_re;
   logic mio_outsel_17_we;
   logic [5:0] mio_outsel_17_qs;
   logic [5:0] mio_outsel_17_wd;
+  logic mio_outsel_18_re;
   logic mio_outsel_18_we;
   logic [5:0] mio_outsel_18_qs;
   logic [5:0] mio_outsel_18_wd;
+  logic mio_outsel_19_re;
   logic mio_outsel_19_we;
   logic [5:0] mio_outsel_19_qs;
   logic [5:0] mio_outsel_19_wd;
+  logic mio_outsel_20_re;
   logic mio_outsel_20_we;
   logic [5:0] mio_outsel_20_qs;
   logic [5:0] mio_outsel_20_wd;
+  logic mio_outsel_21_re;
   logic mio_outsel_21_we;
   logic [5:0] mio_outsel_21_qs;
   logic [5:0] mio_outsel_21_wd;
+  logic mio_outsel_22_re;
   logic mio_outsel_22_we;
   logic [5:0] mio_outsel_22_qs;
   logic [5:0] mio_outsel_22_wd;
+  logic mio_outsel_23_re;
   logic mio_outsel_23_we;
   logic [5:0] mio_outsel_23_qs;
   logic [5:0] mio_outsel_23_wd;
+  logic mio_outsel_24_re;
   logic mio_outsel_24_we;
   logic [5:0] mio_outsel_24_qs;
   logic [5:0] mio_outsel_24_wd;
+  logic mio_outsel_25_re;
   logic mio_outsel_25_we;
   logic [5:0] mio_outsel_25_qs;
   logic [5:0] mio_outsel_25_wd;
+  logic mio_outsel_26_re;
   logic mio_outsel_26_we;
   logic [5:0] mio_outsel_26_qs;
   logic [5:0] mio_outsel_26_wd;
+  logic mio_outsel_27_re;
   logic mio_outsel_27_we;
   logic [5:0] mio_outsel_27_qs;
   logic [5:0] mio_outsel_27_wd;
+  logic mio_outsel_28_re;
   logic mio_outsel_28_we;
   logic [5:0] mio_outsel_28_qs;
   logic [5:0] mio_outsel_28_wd;
+  logic mio_outsel_29_re;
   logic mio_outsel_29_we;
   logic [5:0] mio_outsel_29_qs;
   logic [5:0] mio_outsel_29_wd;
+  logic mio_outsel_30_re;
   logic mio_outsel_30_we;
   logic [5:0] mio_outsel_30_qs;
   logic [5:0] mio_outsel_30_wd;
+  logic mio_outsel_31_re;
   logic mio_outsel_31_we;
   logic [5:0] mio_outsel_31_qs;
   logic [5:0] mio_outsel_31_wd;
+  logic mio_outsel_32_re;
   logic mio_outsel_32_we;
   logic [5:0] mio_outsel_32_qs;
   logic [5:0] mio_outsel_32_wd;
+  logic mio_outsel_33_re;
   logic mio_outsel_33_we;
   logic [5:0] mio_outsel_33_qs;
   logic [5:0] mio_outsel_33_wd;
+  logic mio_outsel_34_re;
   logic mio_outsel_34_we;
   logic [5:0] mio_outsel_34_qs;
   logic [5:0] mio_outsel_34_wd;
+  logic mio_outsel_35_re;
   logic mio_outsel_35_we;
   logic [5:0] mio_outsel_35_qs;
   logic [5:0] mio_outsel_35_wd;
+  logic mio_outsel_36_re;
   logic mio_outsel_36_we;
   logic [5:0] mio_outsel_36_qs;
   logic [5:0] mio_outsel_36_wd;
+  logic mio_outsel_37_re;
   logic mio_outsel_37_we;
   logic [5:0] mio_outsel_37_qs;
   logic [5:0] mio_outsel_37_wd;
+  logic mio_outsel_38_re;
   logic mio_outsel_38_we;
   logic [5:0] mio_outsel_38_qs;
   logic [5:0] mio_outsel_38_wd;
+  logic mio_outsel_39_re;
   logic mio_outsel_39_we;
   logic [5:0] mio_outsel_39_qs;
   logic [5:0] mio_outsel_39_wd;
+  logic mio_outsel_40_re;
   logic mio_outsel_40_we;
   logic [5:0] mio_outsel_40_qs;
   logic [5:0] mio_outsel_40_wd;
+  logic mio_outsel_41_re;
   logic mio_outsel_41_we;
   logic [5:0] mio_outsel_41_qs;
   logic [5:0] mio_outsel_41_wd;
+  logic mio_outsel_42_re;
   logic mio_outsel_42_we;
   logic [5:0] mio_outsel_42_qs;
   logic [5:0] mio_outsel_42_wd;
+  logic mio_outsel_43_re;
   logic mio_outsel_43_we;
   logic [5:0] mio_outsel_43_qs;
   logic [5:0] mio_outsel_43_wd;
+  logic mio_outsel_44_re;
   logic mio_outsel_44_we;
   logic [5:0] mio_outsel_44_qs;
   logic [5:0] mio_outsel_44_wd;
+  logic mio_outsel_45_re;
   logic mio_outsel_45_we;
   logic [5:0] mio_outsel_45_qs;
   logic [5:0] mio_outsel_45_wd;
+  logic mio_outsel_46_re;
   logic mio_outsel_46_we;
   logic [5:0] mio_outsel_46_qs;
   logic [5:0] mio_outsel_46_wd;
@@ -5195,1257 +5280,915 @@ module pinmux_reg_top (
 
 
   // Subregister 0 of Multireg mio_periph_insel
-  // R[mio_periph_insel_0]: V(False)
+  // R[mio_periph_insel_0]: V(True)
+  logic mio_periph_insel_0_qe;
+  logic [0:0] mio_periph_insel_0_flds_we;
+  assign mio_periph_insel_0_qe = &mio_periph_insel_0_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_0_gated_we;
   assign mio_periph_insel_0_gated_we = mio_periph_insel_0_we & mio_periph_insel_regwen_0_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_0 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_0_re),
     .we     (mio_periph_insel_0_gated_we),
     .wd     (mio_periph_insel_0_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[0].d),
+    .qre    (),
+    .qe     (mio_periph_insel_0_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[0].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_0_qs)
   );
+  assign reg2hw.mio_periph_insel[0].qe = mio_periph_insel_0_qe;
 
 
   // Subregister 1 of Multireg mio_periph_insel
-  // R[mio_periph_insel_1]: V(False)
+  // R[mio_periph_insel_1]: V(True)
+  logic mio_periph_insel_1_qe;
+  logic [0:0] mio_periph_insel_1_flds_we;
+  assign mio_periph_insel_1_qe = &mio_periph_insel_1_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_1_gated_we;
   assign mio_periph_insel_1_gated_we = mio_periph_insel_1_we & mio_periph_insel_regwen_1_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_1 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_1_re),
     .we     (mio_periph_insel_1_gated_we),
     .wd     (mio_periph_insel_1_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[1].d),
+    .qre    (),
+    .qe     (mio_periph_insel_1_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[1].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_1_qs)
   );
+  assign reg2hw.mio_periph_insel[1].qe = mio_periph_insel_1_qe;
 
 
   // Subregister 2 of Multireg mio_periph_insel
-  // R[mio_periph_insel_2]: V(False)
+  // R[mio_periph_insel_2]: V(True)
+  logic mio_periph_insel_2_qe;
+  logic [0:0] mio_periph_insel_2_flds_we;
+  assign mio_periph_insel_2_qe = &mio_periph_insel_2_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_2_gated_we;
   assign mio_periph_insel_2_gated_we = mio_periph_insel_2_we & mio_periph_insel_regwen_2_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_2 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_2_re),
     .we     (mio_periph_insel_2_gated_we),
     .wd     (mio_periph_insel_2_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[2].d),
+    .qre    (),
+    .qe     (mio_periph_insel_2_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[2].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_2_qs)
   );
+  assign reg2hw.mio_periph_insel[2].qe = mio_periph_insel_2_qe;
 
 
   // Subregister 3 of Multireg mio_periph_insel
-  // R[mio_periph_insel_3]: V(False)
+  // R[mio_periph_insel_3]: V(True)
+  logic mio_periph_insel_3_qe;
+  logic [0:0] mio_periph_insel_3_flds_we;
+  assign mio_periph_insel_3_qe = &mio_periph_insel_3_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_3_gated_we;
   assign mio_periph_insel_3_gated_we = mio_periph_insel_3_we & mio_periph_insel_regwen_3_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_3 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_3_re),
     .we     (mio_periph_insel_3_gated_we),
     .wd     (mio_periph_insel_3_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[3].d),
+    .qre    (),
+    .qe     (mio_periph_insel_3_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[3].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_3_qs)
   );
+  assign reg2hw.mio_periph_insel[3].qe = mio_periph_insel_3_qe;
 
 
   // Subregister 4 of Multireg mio_periph_insel
-  // R[mio_periph_insel_4]: V(False)
+  // R[mio_periph_insel_4]: V(True)
+  logic mio_periph_insel_4_qe;
+  logic [0:0] mio_periph_insel_4_flds_we;
+  assign mio_periph_insel_4_qe = &mio_periph_insel_4_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_4_gated_we;
   assign mio_periph_insel_4_gated_we = mio_periph_insel_4_we & mio_periph_insel_regwen_4_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_4 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_4_re),
     .we     (mio_periph_insel_4_gated_we),
     .wd     (mio_periph_insel_4_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[4].d),
+    .qre    (),
+    .qe     (mio_periph_insel_4_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[4].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_4_qs)
   );
+  assign reg2hw.mio_periph_insel[4].qe = mio_periph_insel_4_qe;
 
 
   // Subregister 5 of Multireg mio_periph_insel
-  // R[mio_periph_insel_5]: V(False)
+  // R[mio_periph_insel_5]: V(True)
+  logic mio_periph_insel_5_qe;
+  logic [0:0] mio_periph_insel_5_flds_we;
+  assign mio_periph_insel_5_qe = &mio_periph_insel_5_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_5_gated_we;
   assign mio_periph_insel_5_gated_we = mio_periph_insel_5_we & mio_periph_insel_regwen_5_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_5 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_5_re),
     .we     (mio_periph_insel_5_gated_we),
     .wd     (mio_periph_insel_5_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[5].d),
+    .qre    (),
+    .qe     (mio_periph_insel_5_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[5].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_5_qs)
   );
+  assign reg2hw.mio_periph_insel[5].qe = mio_periph_insel_5_qe;
 
 
   // Subregister 6 of Multireg mio_periph_insel
-  // R[mio_periph_insel_6]: V(False)
+  // R[mio_periph_insel_6]: V(True)
+  logic mio_periph_insel_6_qe;
+  logic [0:0] mio_periph_insel_6_flds_we;
+  assign mio_periph_insel_6_qe = &mio_periph_insel_6_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_6_gated_we;
   assign mio_periph_insel_6_gated_we = mio_periph_insel_6_we & mio_periph_insel_regwen_6_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_6 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_6_re),
     .we     (mio_periph_insel_6_gated_we),
     .wd     (mio_periph_insel_6_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[6].d),
+    .qre    (),
+    .qe     (mio_periph_insel_6_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[6].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_6_qs)
   );
+  assign reg2hw.mio_periph_insel[6].qe = mio_periph_insel_6_qe;
 
 
   // Subregister 7 of Multireg mio_periph_insel
-  // R[mio_periph_insel_7]: V(False)
+  // R[mio_periph_insel_7]: V(True)
+  logic mio_periph_insel_7_qe;
+  logic [0:0] mio_periph_insel_7_flds_we;
+  assign mio_periph_insel_7_qe = &mio_periph_insel_7_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_7_gated_we;
   assign mio_periph_insel_7_gated_we = mio_periph_insel_7_we & mio_periph_insel_regwen_7_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_7 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_7_re),
     .we     (mio_periph_insel_7_gated_we),
     .wd     (mio_periph_insel_7_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[7].d),
+    .qre    (),
+    .qe     (mio_periph_insel_7_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[7].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_7_qs)
   );
+  assign reg2hw.mio_periph_insel[7].qe = mio_periph_insel_7_qe;
 
 
   // Subregister 8 of Multireg mio_periph_insel
-  // R[mio_periph_insel_8]: V(False)
+  // R[mio_periph_insel_8]: V(True)
+  logic mio_periph_insel_8_qe;
+  logic [0:0] mio_periph_insel_8_flds_we;
+  assign mio_periph_insel_8_qe = &mio_periph_insel_8_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_8_gated_we;
   assign mio_periph_insel_8_gated_we = mio_periph_insel_8_we & mio_periph_insel_regwen_8_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_8 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_8_re),
     .we     (mio_periph_insel_8_gated_we),
     .wd     (mio_periph_insel_8_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[8].d),
+    .qre    (),
+    .qe     (mio_periph_insel_8_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[8].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_8_qs)
   );
+  assign reg2hw.mio_periph_insel[8].qe = mio_periph_insel_8_qe;
 
 
   // Subregister 9 of Multireg mio_periph_insel
-  // R[mio_periph_insel_9]: V(False)
+  // R[mio_periph_insel_9]: V(True)
+  logic mio_periph_insel_9_qe;
+  logic [0:0] mio_periph_insel_9_flds_we;
+  assign mio_periph_insel_9_qe = &mio_periph_insel_9_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_9_gated_we;
   assign mio_periph_insel_9_gated_we = mio_periph_insel_9_we & mio_periph_insel_regwen_9_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_9 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_9_re),
     .we     (mio_periph_insel_9_gated_we),
     .wd     (mio_periph_insel_9_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[9].d),
+    .qre    (),
+    .qe     (mio_periph_insel_9_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[9].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_9_qs)
   );
+  assign reg2hw.mio_periph_insel[9].qe = mio_periph_insel_9_qe;
 
 
   // Subregister 10 of Multireg mio_periph_insel
-  // R[mio_periph_insel_10]: V(False)
+  // R[mio_periph_insel_10]: V(True)
+  logic mio_periph_insel_10_qe;
+  logic [0:0] mio_periph_insel_10_flds_we;
+  assign mio_periph_insel_10_qe = &mio_periph_insel_10_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_10_gated_we;
   assign mio_periph_insel_10_gated_we = mio_periph_insel_10_we & mio_periph_insel_regwen_10_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_10 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_10_re),
     .we     (mio_periph_insel_10_gated_we),
     .wd     (mio_periph_insel_10_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[10].d),
+    .qre    (),
+    .qe     (mio_periph_insel_10_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[10].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_10_qs)
   );
+  assign reg2hw.mio_periph_insel[10].qe = mio_periph_insel_10_qe;
 
 
   // Subregister 11 of Multireg mio_periph_insel
-  // R[mio_periph_insel_11]: V(False)
+  // R[mio_periph_insel_11]: V(True)
+  logic mio_periph_insel_11_qe;
+  logic [0:0] mio_periph_insel_11_flds_we;
+  assign mio_periph_insel_11_qe = &mio_periph_insel_11_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_11_gated_we;
   assign mio_periph_insel_11_gated_we = mio_periph_insel_11_we & mio_periph_insel_regwen_11_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_11 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_11_re),
     .we     (mio_periph_insel_11_gated_we),
     .wd     (mio_periph_insel_11_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[11].d),
+    .qre    (),
+    .qe     (mio_periph_insel_11_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[11].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_11_qs)
   );
+  assign reg2hw.mio_periph_insel[11].qe = mio_periph_insel_11_qe;
 
 
   // Subregister 12 of Multireg mio_periph_insel
-  // R[mio_periph_insel_12]: V(False)
+  // R[mio_periph_insel_12]: V(True)
+  logic mio_periph_insel_12_qe;
+  logic [0:0] mio_periph_insel_12_flds_we;
+  assign mio_periph_insel_12_qe = &mio_periph_insel_12_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_12_gated_we;
   assign mio_periph_insel_12_gated_we = mio_periph_insel_12_we & mio_periph_insel_regwen_12_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_12 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_12_re),
     .we     (mio_periph_insel_12_gated_we),
     .wd     (mio_periph_insel_12_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[12].d),
+    .qre    (),
+    .qe     (mio_periph_insel_12_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[12].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_12_qs)
   );
+  assign reg2hw.mio_periph_insel[12].qe = mio_periph_insel_12_qe;
 
 
   // Subregister 13 of Multireg mio_periph_insel
-  // R[mio_periph_insel_13]: V(False)
+  // R[mio_periph_insel_13]: V(True)
+  logic mio_periph_insel_13_qe;
+  logic [0:0] mio_periph_insel_13_flds_we;
+  assign mio_periph_insel_13_qe = &mio_periph_insel_13_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_13_gated_we;
   assign mio_periph_insel_13_gated_we = mio_periph_insel_13_we & mio_periph_insel_regwen_13_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_13 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_13_re),
     .we     (mio_periph_insel_13_gated_we),
     .wd     (mio_periph_insel_13_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[13].d),
+    .qre    (),
+    .qe     (mio_periph_insel_13_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[13].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_13_qs)
   );
+  assign reg2hw.mio_periph_insel[13].qe = mio_periph_insel_13_qe;
 
 
   // Subregister 14 of Multireg mio_periph_insel
-  // R[mio_periph_insel_14]: V(False)
+  // R[mio_periph_insel_14]: V(True)
+  logic mio_periph_insel_14_qe;
+  logic [0:0] mio_periph_insel_14_flds_we;
+  assign mio_periph_insel_14_qe = &mio_periph_insel_14_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_14_gated_we;
   assign mio_periph_insel_14_gated_we = mio_periph_insel_14_we & mio_periph_insel_regwen_14_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_14 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_14_re),
     .we     (mio_periph_insel_14_gated_we),
     .wd     (mio_periph_insel_14_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[14].d),
+    .qre    (),
+    .qe     (mio_periph_insel_14_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[14].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_14_qs)
   );
+  assign reg2hw.mio_periph_insel[14].qe = mio_periph_insel_14_qe;
 
 
   // Subregister 15 of Multireg mio_periph_insel
-  // R[mio_periph_insel_15]: V(False)
+  // R[mio_periph_insel_15]: V(True)
+  logic mio_periph_insel_15_qe;
+  logic [0:0] mio_periph_insel_15_flds_we;
+  assign mio_periph_insel_15_qe = &mio_periph_insel_15_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_15_gated_we;
   assign mio_periph_insel_15_gated_we = mio_periph_insel_15_we & mio_periph_insel_regwen_15_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_15 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_15_re),
     .we     (mio_periph_insel_15_gated_we),
     .wd     (mio_periph_insel_15_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[15].d),
+    .qre    (),
+    .qe     (mio_periph_insel_15_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[15].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_15_qs)
   );
+  assign reg2hw.mio_periph_insel[15].qe = mio_periph_insel_15_qe;
 
 
   // Subregister 16 of Multireg mio_periph_insel
-  // R[mio_periph_insel_16]: V(False)
+  // R[mio_periph_insel_16]: V(True)
+  logic mio_periph_insel_16_qe;
+  logic [0:0] mio_periph_insel_16_flds_we;
+  assign mio_periph_insel_16_qe = &mio_periph_insel_16_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_16_gated_we;
   assign mio_periph_insel_16_gated_we = mio_periph_insel_16_we & mio_periph_insel_regwen_16_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_16 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_16_re),
     .we     (mio_periph_insel_16_gated_we),
     .wd     (mio_periph_insel_16_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[16].d),
+    .qre    (),
+    .qe     (mio_periph_insel_16_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[16].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_16_qs)
   );
+  assign reg2hw.mio_periph_insel[16].qe = mio_periph_insel_16_qe;
 
 
   // Subregister 17 of Multireg mio_periph_insel
-  // R[mio_periph_insel_17]: V(False)
+  // R[mio_periph_insel_17]: V(True)
+  logic mio_periph_insel_17_qe;
+  logic [0:0] mio_periph_insel_17_flds_we;
+  assign mio_periph_insel_17_qe = &mio_periph_insel_17_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_17_gated_we;
   assign mio_periph_insel_17_gated_we = mio_periph_insel_17_we & mio_periph_insel_regwen_17_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_17 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_17_re),
     .we     (mio_periph_insel_17_gated_we),
     .wd     (mio_periph_insel_17_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[17].d),
+    .qre    (),
+    .qe     (mio_periph_insel_17_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[17].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_17_qs)
   );
+  assign reg2hw.mio_periph_insel[17].qe = mio_periph_insel_17_qe;
 
 
   // Subregister 18 of Multireg mio_periph_insel
-  // R[mio_periph_insel_18]: V(False)
+  // R[mio_periph_insel_18]: V(True)
+  logic mio_periph_insel_18_qe;
+  logic [0:0] mio_periph_insel_18_flds_we;
+  assign mio_periph_insel_18_qe = &mio_periph_insel_18_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_18_gated_we;
   assign mio_periph_insel_18_gated_we = mio_periph_insel_18_we & mio_periph_insel_regwen_18_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_18 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_18_re),
     .we     (mio_periph_insel_18_gated_we),
     .wd     (mio_periph_insel_18_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[18].d),
+    .qre    (),
+    .qe     (mio_periph_insel_18_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[18].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_18_qs)
   );
+  assign reg2hw.mio_periph_insel[18].qe = mio_periph_insel_18_qe;
 
 
   // Subregister 19 of Multireg mio_periph_insel
-  // R[mio_periph_insel_19]: V(False)
+  // R[mio_periph_insel_19]: V(True)
+  logic mio_periph_insel_19_qe;
+  logic [0:0] mio_periph_insel_19_flds_we;
+  assign mio_periph_insel_19_qe = &mio_periph_insel_19_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_19_gated_we;
   assign mio_periph_insel_19_gated_we = mio_periph_insel_19_we & mio_periph_insel_regwen_19_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_19 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_19_re),
     .we     (mio_periph_insel_19_gated_we),
     .wd     (mio_periph_insel_19_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[19].d),
+    .qre    (),
+    .qe     (mio_periph_insel_19_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[19].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_19_qs)
   );
+  assign reg2hw.mio_periph_insel[19].qe = mio_periph_insel_19_qe;
 
 
   // Subregister 20 of Multireg mio_periph_insel
-  // R[mio_periph_insel_20]: V(False)
+  // R[mio_periph_insel_20]: V(True)
+  logic mio_periph_insel_20_qe;
+  logic [0:0] mio_periph_insel_20_flds_we;
+  assign mio_periph_insel_20_qe = &mio_periph_insel_20_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_20_gated_we;
   assign mio_periph_insel_20_gated_we = mio_periph_insel_20_we & mio_periph_insel_regwen_20_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_20 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_20_re),
     .we     (mio_periph_insel_20_gated_we),
     .wd     (mio_periph_insel_20_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[20].d),
+    .qre    (),
+    .qe     (mio_periph_insel_20_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[20].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_20_qs)
   );
+  assign reg2hw.mio_periph_insel[20].qe = mio_periph_insel_20_qe;
 
 
   // Subregister 21 of Multireg mio_periph_insel
-  // R[mio_periph_insel_21]: V(False)
+  // R[mio_periph_insel_21]: V(True)
+  logic mio_periph_insel_21_qe;
+  logic [0:0] mio_periph_insel_21_flds_we;
+  assign mio_periph_insel_21_qe = &mio_periph_insel_21_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_21_gated_we;
   assign mio_periph_insel_21_gated_we = mio_periph_insel_21_we & mio_periph_insel_regwen_21_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_21 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_21_re),
     .we     (mio_periph_insel_21_gated_we),
     .wd     (mio_periph_insel_21_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[21].d),
+    .qre    (),
+    .qe     (mio_periph_insel_21_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[21].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_21_qs)
   );
+  assign reg2hw.mio_periph_insel[21].qe = mio_periph_insel_21_qe;
 
 
   // Subregister 22 of Multireg mio_periph_insel
-  // R[mio_periph_insel_22]: V(False)
+  // R[mio_periph_insel_22]: V(True)
+  logic mio_periph_insel_22_qe;
+  logic [0:0] mio_periph_insel_22_flds_we;
+  assign mio_periph_insel_22_qe = &mio_periph_insel_22_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_22_gated_we;
   assign mio_periph_insel_22_gated_we = mio_periph_insel_22_we & mio_periph_insel_regwen_22_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_22 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_22_re),
     .we     (mio_periph_insel_22_gated_we),
     .wd     (mio_periph_insel_22_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[22].d),
+    .qre    (),
+    .qe     (mio_periph_insel_22_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[22].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_22_qs)
   );
+  assign reg2hw.mio_periph_insel[22].qe = mio_periph_insel_22_qe;
 
 
   // Subregister 23 of Multireg mio_periph_insel
-  // R[mio_periph_insel_23]: V(False)
+  // R[mio_periph_insel_23]: V(True)
+  logic mio_periph_insel_23_qe;
+  logic [0:0] mio_periph_insel_23_flds_we;
+  assign mio_periph_insel_23_qe = &mio_periph_insel_23_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_23_gated_we;
   assign mio_periph_insel_23_gated_we = mio_periph_insel_23_we & mio_periph_insel_regwen_23_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_23 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_23_re),
     .we     (mio_periph_insel_23_gated_we),
     .wd     (mio_periph_insel_23_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[23].d),
+    .qre    (),
+    .qe     (mio_periph_insel_23_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[23].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_23_qs)
   );
+  assign reg2hw.mio_periph_insel[23].qe = mio_periph_insel_23_qe;
 
 
   // Subregister 24 of Multireg mio_periph_insel
-  // R[mio_periph_insel_24]: V(False)
+  // R[mio_periph_insel_24]: V(True)
+  logic mio_periph_insel_24_qe;
+  logic [0:0] mio_periph_insel_24_flds_we;
+  assign mio_periph_insel_24_qe = &mio_periph_insel_24_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_24_gated_we;
   assign mio_periph_insel_24_gated_we = mio_periph_insel_24_we & mio_periph_insel_regwen_24_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_24 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_24_re),
     .we     (mio_periph_insel_24_gated_we),
     .wd     (mio_periph_insel_24_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[24].d),
+    .qre    (),
+    .qe     (mio_periph_insel_24_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[24].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_24_qs)
   );
+  assign reg2hw.mio_periph_insel[24].qe = mio_periph_insel_24_qe;
 
 
   // Subregister 25 of Multireg mio_periph_insel
-  // R[mio_periph_insel_25]: V(False)
+  // R[mio_periph_insel_25]: V(True)
+  logic mio_periph_insel_25_qe;
+  logic [0:0] mio_periph_insel_25_flds_we;
+  assign mio_periph_insel_25_qe = &mio_periph_insel_25_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_25_gated_we;
   assign mio_periph_insel_25_gated_we = mio_periph_insel_25_we & mio_periph_insel_regwen_25_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_25 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_25_re),
     .we     (mio_periph_insel_25_gated_we),
     .wd     (mio_periph_insel_25_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[25].d),
+    .qre    (),
+    .qe     (mio_periph_insel_25_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[25].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_25_qs)
   );
+  assign reg2hw.mio_periph_insel[25].qe = mio_periph_insel_25_qe;
 
 
   // Subregister 26 of Multireg mio_periph_insel
-  // R[mio_periph_insel_26]: V(False)
+  // R[mio_periph_insel_26]: V(True)
+  logic mio_periph_insel_26_qe;
+  logic [0:0] mio_periph_insel_26_flds_we;
+  assign mio_periph_insel_26_qe = &mio_periph_insel_26_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_26_gated_we;
   assign mio_periph_insel_26_gated_we = mio_periph_insel_26_we & mio_periph_insel_regwen_26_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_26 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_26_re),
     .we     (mio_periph_insel_26_gated_we),
     .wd     (mio_periph_insel_26_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[26].d),
+    .qre    (),
+    .qe     (mio_periph_insel_26_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[26].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_26_qs)
   );
+  assign reg2hw.mio_periph_insel[26].qe = mio_periph_insel_26_qe;
 
 
   // Subregister 27 of Multireg mio_periph_insel
-  // R[mio_periph_insel_27]: V(False)
+  // R[mio_periph_insel_27]: V(True)
+  logic mio_periph_insel_27_qe;
+  logic [0:0] mio_periph_insel_27_flds_we;
+  assign mio_periph_insel_27_qe = &mio_periph_insel_27_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_27_gated_we;
   assign mio_periph_insel_27_gated_we = mio_periph_insel_27_we & mio_periph_insel_regwen_27_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_27 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_27_re),
     .we     (mio_periph_insel_27_gated_we),
     .wd     (mio_periph_insel_27_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[27].d),
+    .qre    (),
+    .qe     (mio_periph_insel_27_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[27].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_27_qs)
   );
+  assign reg2hw.mio_periph_insel[27].qe = mio_periph_insel_27_qe;
 
 
   // Subregister 28 of Multireg mio_periph_insel
-  // R[mio_periph_insel_28]: V(False)
+  // R[mio_periph_insel_28]: V(True)
+  logic mio_periph_insel_28_qe;
+  logic [0:0] mio_periph_insel_28_flds_we;
+  assign mio_periph_insel_28_qe = &mio_periph_insel_28_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_28_gated_we;
   assign mio_periph_insel_28_gated_we = mio_periph_insel_28_we & mio_periph_insel_regwen_28_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_28 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_28_re),
     .we     (mio_periph_insel_28_gated_we),
     .wd     (mio_periph_insel_28_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[28].d),
+    .qre    (),
+    .qe     (mio_periph_insel_28_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[28].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_28_qs)
   );
+  assign reg2hw.mio_periph_insel[28].qe = mio_periph_insel_28_qe;
 
 
   // Subregister 29 of Multireg mio_periph_insel
-  // R[mio_periph_insel_29]: V(False)
+  // R[mio_periph_insel_29]: V(True)
+  logic mio_periph_insel_29_qe;
+  logic [0:0] mio_periph_insel_29_flds_we;
+  assign mio_periph_insel_29_qe = &mio_periph_insel_29_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_29_gated_we;
   assign mio_periph_insel_29_gated_we = mio_periph_insel_29_we & mio_periph_insel_regwen_29_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_29 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_29_re),
     .we     (mio_periph_insel_29_gated_we),
     .wd     (mio_periph_insel_29_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[29].d),
+    .qre    (),
+    .qe     (mio_periph_insel_29_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[29].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_29_qs)
   );
+  assign reg2hw.mio_periph_insel[29].qe = mio_periph_insel_29_qe;
 
 
   // Subregister 30 of Multireg mio_periph_insel
-  // R[mio_periph_insel_30]: V(False)
+  // R[mio_periph_insel_30]: V(True)
+  logic mio_periph_insel_30_qe;
+  logic [0:0] mio_periph_insel_30_flds_we;
+  assign mio_periph_insel_30_qe = &mio_periph_insel_30_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_30_gated_we;
   assign mio_periph_insel_30_gated_we = mio_periph_insel_30_we & mio_periph_insel_regwen_30_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_30 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_30_re),
     .we     (mio_periph_insel_30_gated_we),
     .wd     (mio_periph_insel_30_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[30].d),
+    .qre    (),
+    .qe     (mio_periph_insel_30_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[30].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_30_qs)
   );
+  assign reg2hw.mio_periph_insel[30].qe = mio_periph_insel_30_qe;
 
 
   // Subregister 31 of Multireg mio_periph_insel
-  // R[mio_periph_insel_31]: V(False)
+  // R[mio_periph_insel_31]: V(True)
+  logic mio_periph_insel_31_qe;
+  logic [0:0] mio_periph_insel_31_flds_we;
+  assign mio_periph_insel_31_qe = &mio_periph_insel_31_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_31_gated_we;
   assign mio_periph_insel_31_gated_we = mio_periph_insel_31_we & mio_periph_insel_regwen_31_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_31 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_31_re),
     .we     (mio_periph_insel_31_gated_we),
     .wd     (mio_periph_insel_31_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[31].d),
+    .qre    (),
+    .qe     (mio_periph_insel_31_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[31].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_31_qs)
   );
+  assign reg2hw.mio_periph_insel[31].qe = mio_periph_insel_31_qe;
 
 
   // Subregister 32 of Multireg mio_periph_insel
-  // R[mio_periph_insel_32]: V(False)
+  // R[mio_periph_insel_32]: V(True)
+  logic mio_periph_insel_32_qe;
+  logic [0:0] mio_periph_insel_32_flds_we;
+  assign mio_periph_insel_32_qe = &mio_periph_insel_32_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_32_gated_we;
   assign mio_periph_insel_32_gated_we = mio_periph_insel_32_we & mio_periph_insel_regwen_32_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_32 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_32_re),
     .we     (mio_periph_insel_32_gated_we),
     .wd     (mio_periph_insel_32_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[32].d),
+    .qre    (),
+    .qe     (mio_periph_insel_32_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[32].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_32_qs)
   );
+  assign reg2hw.mio_periph_insel[32].qe = mio_periph_insel_32_qe;
 
 
   // Subregister 33 of Multireg mio_periph_insel
-  // R[mio_periph_insel_33]: V(False)
+  // R[mio_periph_insel_33]: V(True)
+  logic mio_periph_insel_33_qe;
+  logic [0:0] mio_periph_insel_33_flds_we;
+  assign mio_periph_insel_33_qe = &mio_periph_insel_33_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_33_gated_we;
   assign mio_periph_insel_33_gated_we = mio_periph_insel_33_we & mio_periph_insel_regwen_33_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_33 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_33_re),
     .we     (mio_periph_insel_33_gated_we),
     .wd     (mio_periph_insel_33_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[33].d),
+    .qre    (),
+    .qe     (mio_periph_insel_33_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[33].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_33_qs)
   );
+  assign reg2hw.mio_periph_insel[33].qe = mio_periph_insel_33_qe;
 
 
   // Subregister 34 of Multireg mio_periph_insel
-  // R[mio_periph_insel_34]: V(False)
+  // R[mio_periph_insel_34]: V(True)
+  logic mio_periph_insel_34_qe;
+  logic [0:0] mio_periph_insel_34_flds_we;
+  assign mio_periph_insel_34_qe = &mio_periph_insel_34_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_34_gated_we;
   assign mio_periph_insel_34_gated_we = mio_periph_insel_34_we & mio_periph_insel_regwen_34_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_34 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_34_re),
     .we     (mio_periph_insel_34_gated_we),
     .wd     (mio_periph_insel_34_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[34].d),
+    .qre    (),
+    .qe     (mio_periph_insel_34_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[34].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_34_qs)
   );
+  assign reg2hw.mio_periph_insel[34].qe = mio_periph_insel_34_qe;
 
 
   // Subregister 35 of Multireg mio_periph_insel
-  // R[mio_periph_insel_35]: V(False)
+  // R[mio_periph_insel_35]: V(True)
+  logic mio_periph_insel_35_qe;
+  logic [0:0] mio_periph_insel_35_flds_we;
+  assign mio_periph_insel_35_qe = &mio_periph_insel_35_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_35_gated_we;
   assign mio_periph_insel_35_gated_we = mio_periph_insel_35_we & mio_periph_insel_regwen_35_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_35 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_35_re),
     .we     (mio_periph_insel_35_gated_we),
     .wd     (mio_periph_insel_35_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[35].d),
+    .qre    (),
+    .qe     (mio_periph_insel_35_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[35].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_35_qs)
   );
+  assign reg2hw.mio_periph_insel[35].qe = mio_periph_insel_35_qe;
 
 
   // Subregister 36 of Multireg mio_periph_insel
-  // R[mio_periph_insel_36]: V(False)
+  // R[mio_periph_insel_36]: V(True)
+  logic mio_periph_insel_36_qe;
+  logic [0:0] mio_periph_insel_36_flds_we;
+  assign mio_periph_insel_36_qe = &mio_periph_insel_36_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_36_gated_we;
   assign mio_periph_insel_36_gated_we = mio_periph_insel_36_we & mio_periph_insel_regwen_36_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_36 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_36_re),
     .we     (mio_periph_insel_36_gated_we),
     .wd     (mio_periph_insel_36_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[36].d),
+    .qre    (),
+    .qe     (mio_periph_insel_36_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[36].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_36_qs)
   );
+  assign reg2hw.mio_periph_insel[36].qe = mio_periph_insel_36_qe;
 
 
   // Subregister 37 of Multireg mio_periph_insel
-  // R[mio_periph_insel_37]: V(False)
+  // R[mio_periph_insel_37]: V(True)
+  logic mio_periph_insel_37_qe;
+  logic [0:0] mio_periph_insel_37_flds_we;
+  assign mio_periph_insel_37_qe = &mio_periph_insel_37_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_periph_insel_37_gated_we;
   assign mio_periph_insel_37_gated_we = mio_periph_insel_37_we & mio_periph_insel_regwen_37_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h0),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_periph_insel_37 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_periph_insel_37_re),
     .we     (mio_periph_insel_37_gated_we),
     .wd     (mio_periph_insel_37_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_periph_insel[37].d),
+    .qre    (),
+    .qe     (mio_periph_insel_37_flds_we[0]),
     .q      (reg2hw.mio_periph_insel[37].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_periph_insel_37_qs)
   );
+  assign reg2hw.mio_periph_insel[37].qe = mio_periph_insel_37_qe;
 
 
   // Subregister 0 of Multireg mio_outsel_regwen
@@ -7859,1554 +7602,1131 @@ module pinmux_reg_top (
 
 
   // Subregister 0 of Multireg mio_outsel
-  // R[mio_outsel_0]: V(False)
+  // R[mio_outsel_0]: V(True)
+  logic mio_outsel_0_qe;
+  logic [0:0] mio_outsel_0_flds_we;
+  assign mio_outsel_0_qe = &mio_outsel_0_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_0_gated_we;
   assign mio_outsel_0_gated_we = mio_outsel_0_we & mio_outsel_regwen_0_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_0 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_0_re),
     .we     (mio_outsel_0_gated_we),
     .wd     (mio_outsel_0_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[0].d),
+    .qre    (),
+    .qe     (mio_outsel_0_flds_we[0]),
     .q      (reg2hw.mio_outsel[0].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_0_qs)
   );
+  assign reg2hw.mio_outsel[0].qe = mio_outsel_0_qe;
 
 
   // Subregister 1 of Multireg mio_outsel
-  // R[mio_outsel_1]: V(False)
+  // R[mio_outsel_1]: V(True)
+  logic mio_outsel_1_qe;
+  logic [0:0] mio_outsel_1_flds_we;
+  assign mio_outsel_1_qe = &mio_outsel_1_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_1_gated_we;
   assign mio_outsel_1_gated_we = mio_outsel_1_we & mio_outsel_regwen_1_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_1 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_1_re),
     .we     (mio_outsel_1_gated_we),
     .wd     (mio_outsel_1_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[1].d),
+    .qre    (),
+    .qe     (mio_outsel_1_flds_we[0]),
     .q      (reg2hw.mio_outsel[1].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_1_qs)
   );
+  assign reg2hw.mio_outsel[1].qe = mio_outsel_1_qe;
 
 
   // Subregister 2 of Multireg mio_outsel
-  // R[mio_outsel_2]: V(False)
+  // R[mio_outsel_2]: V(True)
+  logic mio_outsel_2_qe;
+  logic [0:0] mio_outsel_2_flds_we;
+  assign mio_outsel_2_qe = &mio_outsel_2_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_2_gated_we;
   assign mio_outsel_2_gated_we = mio_outsel_2_we & mio_outsel_regwen_2_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_2 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_2_re),
     .we     (mio_outsel_2_gated_we),
     .wd     (mio_outsel_2_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[2].d),
+    .qre    (),
+    .qe     (mio_outsel_2_flds_we[0]),
     .q      (reg2hw.mio_outsel[2].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_2_qs)
   );
+  assign reg2hw.mio_outsel[2].qe = mio_outsel_2_qe;
 
 
   // Subregister 3 of Multireg mio_outsel
-  // R[mio_outsel_3]: V(False)
+  // R[mio_outsel_3]: V(True)
+  logic mio_outsel_3_qe;
+  logic [0:0] mio_outsel_3_flds_we;
+  assign mio_outsel_3_qe = &mio_outsel_3_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_3_gated_we;
   assign mio_outsel_3_gated_we = mio_outsel_3_we & mio_outsel_regwen_3_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_3 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_3_re),
     .we     (mio_outsel_3_gated_we),
     .wd     (mio_outsel_3_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[3].d),
+    .qre    (),
+    .qe     (mio_outsel_3_flds_we[0]),
     .q      (reg2hw.mio_outsel[3].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_3_qs)
   );
+  assign reg2hw.mio_outsel[3].qe = mio_outsel_3_qe;
 
 
   // Subregister 4 of Multireg mio_outsel
-  // R[mio_outsel_4]: V(False)
+  // R[mio_outsel_4]: V(True)
+  logic mio_outsel_4_qe;
+  logic [0:0] mio_outsel_4_flds_we;
+  assign mio_outsel_4_qe = &mio_outsel_4_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_4_gated_we;
   assign mio_outsel_4_gated_we = mio_outsel_4_we & mio_outsel_regwen_4_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_4 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_4_re),
     .we     (mio_outsel_4_gated_we),
     .wd     (mio_outsel_4_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[4].d),
+    .qre    (),
+    .qe     (mio_outsel_4_flds_we[0]),
     .q      (reg2hw.mio_outsel[4].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_4_qs)
   );
+  assign reg2hw.mio_outsel[4].qe = mio_outsel_4_qe;
 
 
   // Subregister 5 of Multireg mio_outsel
-  // R[mio_outsel_5]: V(False)
+  // R[mio_outsel_5]: V(True)
+  logic mio_outsel_5_qe;
+  logic [0:0] mio_outsel_5_flds_we;
+  assign mio_outsel_5_qe = &mio_outsel_5_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_5_gated_we;
   assign mio_outsel_5_gated_we = mio_outsel_5_we & mio_outsel_regwen_5_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_5 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_5_re),
     .we     (mio_outsel_5_gated_we),
     .wd     (mio_outsel_5_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[5].d),
+    .qre    (),
+    .qe     (mio_outsel_5_flds_we[0]),
     .q      (reg2hw.mio_outsel[5].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_5_qs)
   );
+  assign reg2hw.mio_outsel[5].qe = mio_outsel_5_qe;
 
 
   // Subregister 6 of Multireg mio_outsel
-  // R[mio_outsel_6]: V(False)
+  // R[mio_outsel_6]: V(True)
+  logic mio_outsel_6_qe;
+  logic [0:0] mio_outsel_6_flds_we;
+  assign mio_outsel_6_qe = &mio_outsel_6_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_6_gated_we;
   assign mio_outsel_6_gated_we = mio_outsel_6_we & mio_outsel_regwen_6_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_6 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_6_re),
     .we     (mio_outsel_6_gated_we),
     .wd     (mio_outsel_6_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[6].d),
+    .qre    (),
+    .qe     (mio_outsel_6_flds_we[0]),
     .q      (reg2hw.mio_outsel[6].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_6_qs)
   );
+  assign reg2hw.mio_outsel[6].qe = mio_outsel_6_qe;
 
 
   // Subregister 7 of Multireg mio_outsel
-  // R[mio_outsel_7]: V(False)
+  // R[mio_outsel_7]: V(True)
+  logic mio_outsel_7_qe;
+  logic [0:0] mio_outsel_7_flds_we;
+  assign mio_outsel_7_qe = &mio_outsel_7_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_7_gated_we;
   assign mio_outsel_7_gated_we = mio_outsel_7_we & mio_outsel_regwen_7_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_7 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_7_re),
     .we     (mio_outsel_7_gated_we),
     .wd     (mio_outsel_7_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[7].d),
+    .qre    (),
+    .qe     (mio_outsel_7_flds_we[0]),
     .q      (reg2hw.mio_outsel[7].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_7_qs)
   );
+  assign reg2hw.mio_outsel[7].qe = mio_outsel_7_qe;
 
 
   // Subregister 8 of Multireg mio_outsel
-  // R[mio_outsel_8]: V(False)
+  // R[mio_outsel_8]: V(True)
+  logic mio_outsel_8_qe;
+  logic [0:0] mio_outsel_8_flds_we;
+  assign mio_outsel_8_qe = &mio_outsel_8_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_8_gated_we;
   assign mio_outsel_8_gated_we = mio_outsel_8_we & mio_outsel_regwen_8_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_8 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_8_re),
     .we     (mio_outsel_8_gated_we),
     .wd     (mio_outsel_8_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[8].d),
+    .qre    (),
+    .qe     (mio_outsel_8_flds_we[0]),
     .q      (reg2hw.mio_outsel[8].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_8_qs)
   );
+  assign reg2hw.mio_outsel[8].qe = mio_outsel_8_qe;
 
 
   // Subregister 9 of Multireg mio_outsel
-  // R[mio_outsel_9]: V(False)
+  // R[mio_outsel_9]: V(True)
+  logic mio_outsel_9_qe;
+  logic [0:0] mio_outsel_9_flds_we;
+  assign mio_outsel_9_qe = &mio_outsel_9_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_9_gated_we;
   assign mio_outsel_9_gated_we = mio_outsel_9_we & mio_outsel_regwen_9_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_9 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_9_re),
     .we     (mio_outsel_9_gated_we),
     .wd     (mio_outsel_9_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[9].d),
+    .qre    (),
+    .qe     (mio_outsel_9_flds_we[0]),
     .q      (reg2hw.mio_outsel[9].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_9_qs)
   );
+  assign reg2hw.mio_outsel[9].qe = mio_outsel_9_qe;
 
 
   // Subregister 10 of Multireg mio_outsel
-  // R[mio_outsel_10]: V(False)
+  // R[mio_outsel_10]: V(True)
+  logic mio_outsel_10_qe;
+  logic [0:0] mio_outsel_10_flds_we;
+  assign mio_outsel_10_qe = &mio_outsel_10_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_10_gated_we;
   assign mio_outsel_10_gated_we = mio_outsel_10_we & mio_outsel_regwen_10_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_10 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_10_re),
     .we     (mio_outsel_10_gated_we),
     .wd     (mio_outsel_10_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[10].d),
+    .qre    (),
+    .qe     (mio_outsel_10_flds_we[0]),
     .q      (reg2hw.mio_outsel[10].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_10_qs)
   );
+  assign reg2hw.mio_outsel[10].qe = mio_outsel_10_qe;
 
 
   // Subregister 11 of Multireg mio_outsel
-  // R[mio_outsel_11]: V(False)
+  // R[mio_outsel_11]: V(True)
+  logic mio_outsel_11_qe;
+  logic [0:0] mio_outsel_11_flds_we;
+  assign mio_outsel_11_qe = &mio_outsel_11_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_11_gated_we;
   assign mio_outsel_11_gated_we = mio_outsel_11_we & mio_outsel_regwen_11_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_11 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_11_re),
     .we     (mio_outsel_11_gated_we),
     .wd     (mio_outsel_11_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[11].d),
+    .qre    (),
+    .qe     (mio_outsel_11_flds_we[0]),
     .q      (reg2hw.mio_outsel[11].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_11_qs)
   );
+  assign reg2hw.mio_outsel[11].qe = mio_outsel_11_qe;
 
 
   // Subregister 12 of Multireg mio_outsel
-  // R[mio_outsel_12]: V(False)
+  // R[mio_outsel_12]: V(True)
+  logic mio_outsel_12_qe;
+  logic [0:0] mio_outsel_12_flds_we;
+  assign mio_outsel_12_qe = &mio_outsel_12_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_12_gated_we;
   assign mio_outsel_12_gated_we = mio_outsel_12_we & mio_outsel_regwen_12_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_12 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_12_re),
     .we     (mio_outsel_12_gated_we),
     .wd     (mio_outsel_12_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[12].d),
+    .qre    (),
+    .qe     (mio_outsel_12_flds_we[0]),
     .q      (reg2hw.mio_outsel[12].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_12_qs)
   );
+  assign reg2hw.mio_outsel[12].qe = mio_outsel_12_qe;
 
 
   // Subregister 13 of Multireg mio_outsel
-  // R[mio_outsel_13]: V(False)
+  // R[mio_outsel_13]: V(True)
+  logic mio_outsel_13_qe;
+  logic [0:0] mio_outsel_13_flds_we;
+  assign mio_outsel_13_qe = &mio_outsel_13_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_13_gated_we;
   assign mio_outsel_13_gated_we = mio_outsel_13_we & mio_outsel_regwen_13_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_13 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_13_re),
     .we     (mio_outsel_13_gated_we),
     .wd     (mio_outsel_13_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[13].d),
+    .qre    (),
+    .qe     (mio_outsel_13_flds_we[0]),
     .q      (reg2hw.mio_outsel[13].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_13_qs)
   );
+  assign reg2hw.mio_outsel[13].qe = mio_outsel_13_qe;
 
 
   // Subregister 14 of Multireg mio_outsel
-  // R[mio_outsel_14]: V(False)
+  // R[mio_outsel_14]: V(True)
+  logic mio_outsel_14_qe;
+  logic [0:0] mio_outsel_14_flds_we;
+  assign mio_outsel_14_qe = &mio_outsel_14_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_14_gated_we;
   assign mio_outsel_14_gated_we = mio_outsel_14_we & mio_outsel_regwen_14_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_14 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_14_re),
     .we     (mio_outsel_14_gated_we),
     .wd     (mio_outsel_14_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[14].d),
+    .qre    (),
+    .qe     (mio_outsel_14_flds_we[0]),
     .q      (reg2hw.mio_outsel[14].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_14_qs)
   );
+  assign reg2hw.mio_outsel[14].qe = mio_outsel_14_qe;
 
 
   // Subregister 15 of Multireg mio_outsel
-  // R[mio_outsel_15]: V(False)
+  // R[mio_outsel_15]: V(True)
+  logic mio_outsel_15_qe;
+  logic [0:0] mio_outsel_15_flds_we;
+  assign mio_outsel_15_qe = &mio_outsel_15_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_15_gated_we;
   assign mio_outsel_15_gated_we = mio_outsel_15_we & mio_outsel_regwen_15_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_15 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_15_re),
     .we     (mio_outsel_15_gated_we),
     .wd     (mio_outsel_15_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[15].d),
+    .qre    (),
+    .qe     (mio_outsel_15_flds_we[0]),
     .q      (reg2hw.mio_outsel[15].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_15_qs)
   );
+  assign reg2hw.mio_outsel[15].qe = mio_outsel_15_qe;
 
 
   // Subregister 16 of Multireg mio_outsel
-  // R[mio_outsel_16]: V(False)
+  // R[mio_outsel_16]: V(True)
+  logic mio_outsel_16_qe;
+  logic [0:0] mio_outsel_16_flds_we;
+  assign mio_outsel_16_qe = &mio_outsel_16_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_16_gated_we;
   assign mio_outsel_16_gated_we = mio_outsel_16_we & mio_outsel_regwen_16_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_16 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_16_re),
     .we     (mio_outsel_16_gated_we),
     .wd     (mio_outsel_16_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[16].d),
+    .qre    (),
+    .qe     (mio_outsel_16_flds_we[0]),
     .q      (reg2hw.mio_outsel[16].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_16_qs)
   );
+  assign reg2hw.mio_outsel[16].qe = mio_outsel_16_qe;
 
 
   // Subregister 17 of Multireg mio_outsel
-  // R[mio_outsel_17]: V(False)
+  // R[mio_outsel_17]: V(True)
+  logic mio_outsel_17_qe;
+  logic [0:0] mio_outsel_17_flds_we;
+  assign mio_outsel_17_qe = &mio_outsel_17_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_17_gated_we;
   assign mio_outsel_17_gated_we = mio_outsel_17_we & mio_outsel_regwen_17_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_17 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_17_re),
     .we     (mio_outsel_17_gated_we),
     .wd     (mio_outsel_17_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[17].d),
+    .qre    (),
+    .qe     (mio_outsel_17_flds_we[0]),
     .q      (reg2hw.mio_outsel[17].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_17_qs)
   );
+  assign reg2hw.mio_outsel[17].qe = mio_outsel_17_qe;
 
 
   // Subregister 18 of Multireg mio_outsel
-  // R[mio_outsel_18]: V(False)
+  // R[mio_outsel_18]: V(True)
+  logic mio_outsel_18_qe;
+  logic [0:0] mio_outsel_18_flds_we;
+  assign mio_outsel_18_qe = &mio_outsel_18_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_18_gated_we;
   assign mio_outsel_18_gated_we = mio_outsel_18_we & mio_outsel_regwen_18_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_18 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_18_re),
     .we     (mio_outsel_18_gated_we),
     .wd     (mio_outsel_18_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[18].d),
+    .qre    (),
+    .qe     (mio_outsel_18_flds_we[0]),
     .q      (reg2hw.mio_outsel[18].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_18_qs)
   );
+  assign reg2hw.mio_outsel[18].qe = mio_outsel_18_qe;
 
 
   // Subregister 19 of Multireg mio_outsel
-  // R[mio_outsel_19]: V(False)
+  // R[mio_outsel_19]: V(True)
+  logic mio_outsel_19_qe;
+  logic [0:0] mio_outsel_19_flds_we;
+  assign mio_outsel_19_qe = &mio_outsel_19_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_19_gated_we;
   assign mio_outsel_19_gated_we = mio_outsel_19_we & mio_outsel_regwen_19_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_19 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_19_re),
     .we     (mio_outsel_19_gated_we),
     .wd     (mio_outsel_19_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[19].d),
+    .qre    (),
+    .qe     (mio_outsel_19_flds_we[0]),
     .q      (reg2hw.mio_outsel[19].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_19_qs)
   );
+  assign reg2hw.mio_outsel[19].qe = mio_outsel_19_qe;
 
 
   // Subregister 20 of Multireg mio_outsel
-  // R[mio_outsel_20]: V(False)
+  // R[mio_outsel_20]: V(True)
+  logic mio_outsel_20_qe;
+  logic [0:0] mio_outsel_20_flds_we;
+  assign mio_outsel_20_qe = &mio_outsel_20_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_20_gated_we;
   assign mio_outsel_20_gated_we = mio_outsel_20_we & mio_outsel_regwen_20_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_20 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_20_re),
     .we     (mio_outsel_20_gated_we),
     .wd     (mio_outsel_20_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[20].d),
+    .qre    (),
+    .qe     (mio_outsel_20_flds_we[0]),
     .q      (reg2hw.mio_outsel[20].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_20_qs)
   );
+  assign reg2hw.mio_outsel[20].qe = mio_outsel_20_qe;
 
 
   // Subregister 21 of Multireg mio_outsel
-  // R[mio_outsel_21]: V(False)
+  // R[mio_outsel_21]: V(True)
+  logic mio_outsel_21_qe;
+  logic [0:0] mio_outsel_21_flds_we;
+  assign mio_outsel_21_qe = &mio_outsel_21_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_21_gated_we;
   assign mio_outsel_21_gated_we = mio_outsel_21_we & mio_outsel_regwen_21_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_21 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_21_re),
     .we     (mio_outsel_21_gated_we),
     .wd     (mio_outsel_21_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[21].d),
+    .qre    (),
+    .qe     (mio_outsel_21_flds_we[0]),
     .q      (reg2hw.mio_outsel[21].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_21_qs)
   );
+  assign reg2hw.mio_outsel[21].qe = mio_outsel_21_qe;
 
 
   // Subregister 22 of Multireg mio_outsel
-  // R[mio_outsel_22]: V(False)
+  // R[mio_outsel_22]: V(True)
+  logic mio_outsel_22_qe;
+  logic [0:0] mio_outsel_22_flds_we;
+  assign mio_outsel_22_qe = &mio_outsel_22_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_22_gated_we;
   assign mio_outsel_22_gated_we = mio_outsel_22_we & mio_outsel_regwen_22_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_22 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_22_re),
     .we     (mio_outsel_22_gated_we),
     .wd     (mio_outsel_22_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[22].d),
+    .qre    (),
+    .qe     (mio_outsel_22_flds_we[0]),
     .q      (reg2hw.mio_outsel[22].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_22_qs)
   );
+  assign reg2hw.mio_outsel[22].qe = mio_outsel_22_qe;
 
 
   // Subregister 23 of Multireg mio_outsel
-  // R[mio_outsel_23]: V(False)
+  // R[mio_outsel_23]: V(True)
+  logic mio_outsel_23_qe;
+  logic [0:0] mio_outsel_23_flds_we;
+  assign mio_outsel_23_qe = &mio_outsel_23_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_23_gated_we;
   assign mio_outsel_23_gated_we = mio_outsel_23_we & mio_outsel_regwen_23_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_23 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_23_re),
     .we     (mio_outsel_23_gated_we),
     .wd     (mio_outsel_23_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[23].d),
+    .qre    (),
+    .qe     (mio_outsel_23_flds_we[0]),
     .q      (reg2hw.mio_outsel[23].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_23_qs)
   );
+  assign reg2hw.mio_outsel[23].qe = mio_outsel_23_qe;
 
 
   // Subregister 24 of Multireg mio_outsel
-  // R[mio_outsel_24]: V(False)
+  // R[mio_outsel_24]: V(True)
+  logic mio_outsel_24_qe;
+  logic [0:0] mio_outsel_24_flds_we;
+  assign mio_outsel_24_qe = &mio_outsel_24_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_24_gated_we;
   assign mio_outsel_24_gated_we = mio_outsel_24_we & mio_outsel_regwen_24_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_24 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_24_re),
     .we     (mio_outsel_24_gated_we),
     .wd     (mio_outsel_24_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[24].d),
+    .qre    (),
+    .qe     (mio_outsel_24_flds_we[0]),
     .q      (reg2hw.mio_outsel[24].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_24_qs)
   );
+  assign reg2hw.mio_outsel[24].qe = mio_outsel_24_qe;
 
 
   // Subregister 25 of Multireg mio_outsel
-  // R[mio_outsel_25]: V(False)
+  // R[mio_outsel_25]: V(True)
+  logic mio_outsel_25_qe;
+  logic [0:0] mio_outsel_25_flds_we;
+  assign mio_outsel_25_qe = &mio_outsel_25_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_25_gated_we;
   assign mio_outsel_25_gated_we = mio_outsel_25_we & mio_outsel_regwen_25_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_25 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_25_re),
     .we     (mio_outsel_25_gated_we),
     .wd     (mio_outsel_25_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[25].d),
+    .qre    (),
+    .qe     (mio_outsel_25_flds_we[0]),
     .q      (reg2hw.mio_outsel[25].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_25_qs)
   );
+  assign reg2hw.mio_outsel[25].qe = mio_outsel_25_qe;
 
 
   // Subregister 26 of Multireg mio_outsel
-  // R[mio_outsel_26]: V(False)
+  // R[mio_outsel_26]: V(True)
+  logic mio_outsel_26_qe;
+  logic [0:0] mio_outsel_26_flds_we;
+  assign mio_outsel_26_qe = &mio_outsel_26_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_26_gated_we;
   assign mio_outsel_26_gated_we = mio_outsel_26_we & mio_outsel_regwen_26_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_26 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_26_re),
     .we     (mio_outsel_26_gated_we),
     .wd     (mio_outsel_26_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[26].d),
+    .qre    (),
+    .qe     (mio_outsel_26_flds_we[0]),
     .q      (reg2hw.mio_outsel[26].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_26_qs)
   );
+  assign reg2hw.mio_outsel[26].qe = mio_outsel_26_qe;
 
 
   // Subregister 27 of Multireg mio_outsel
-  // R[mio_outsel_27]: V(False)
+  // R[mio_outsel_27]: V(True)
+  logic mio_outsel_27_qe;
+  logic [0:0] mio_outsel_27_flds_we;
+  assign mio_outsel_27_qe = &mio_outsel_27_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_27_gated_we;
   assign mio_outsel_27_gated_we = mio_outsel_27_we & mio_outsel_regwen_27_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_27 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_27_re),
     .we     (mio_outsel_27_gated_we),
     .wd     (mio_outsel_27_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[27].d),
+    .qre    (),
+    .qe     (mio_outsel_27_flds_we[0]),
     .q      (reg2hw.mio_outsel[27].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_27_qs)
   );
+  assign reg2hw.mio_outsel[27].qe = mio_outsel_27_qe;
 
 
   // Subregister 28 of Multireg mio_outsel
-  // R[mio_outsel_28]: V(False)
+  // R[mio_outsel_28]: V(True)
+  logic mio_outsel_28_qe;
+  logic [0:0] mio_outsel_28_flds_we;
+  assign mio_outsel_28_qe = &mio_outsel_28_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_28_gated_we;
   assign mio_outsel_28_gated_we = mio_outsel_28_we & mio_outsel_regwen_28_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_28 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_28_re),
     .we     (mio_outsel_28_gated_we),
     .wd     (mio_outsel_28_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[28].d),
+    .qre    (),
+    .qe     (mio_outsel_28_flds_we[0]),
     .q      (reg2hw.mio_outsel[28].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_28_qs)
   );
+  assign reg2hw.mio_outsel[28].qe = mio_outsel_28_qe;
 
 
   // Subregister 29 of Multireg mio_outsel
-  // R[mio_outsel_29]: V(False)
+  // R[mio_outsel_29]: V(True)
+  logic mio_outsel_29_qe;
+  logic [0:0] mio_outsel_29_flds_we;
+  assign mio_outsel_29_qe = &mio_outsel_29_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_29_gated_we;
   assign mio_outsel_29_gated_we = mio_outsel_29_we & mio_outsel_regwen_29_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_29 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_29_re),
     .we     (mio_outsel_29_gated_we),
     .wd     (mio_outsel_29_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[29].d),
+    .qre    (),
+    .qe     (mio_outsel_29_flds_we[0]),
     .q      (reg2hw.mio_outsel[29].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_29_qs)
   );
+  assign reg2hw.mio_outsel[29].qe = mio_outsel_29_qe;
 
 
   // Subregister 30 of Multireg mio_outsel
-  // R[mio_outsel_30]: V(False)
+  // R[mio_outsel_30]: V(True)
+  logic mio_outsel_30_qe;
+  logic [0:0] mio_outsel_30_flds_we;
+  assign mio_outsel_30_qe = &mio_outsel_30_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_30_gated_we;
   assign mio_outsel_30_gated_we = mio_outsel_30_we & mio_outsel_regwen_30_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_30 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_30_re),
     .we     (mio_outsel_30_gated_we),
     .wd     (mio_outsel_30_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[30].d),
+    .qre    (),
+    .qe     (mio_outsel_30_flds_we[0]),
     .q      (reg2hw.mio_outsel[30].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_30_qs)
   );
+  assign reg2hw.mio_outsel[30].qe = mio_outsel_30_qe;
 
 
   // Subregister 31 of Multireg mio_outsel
-  // R[mio_outsel_31]: V(False)
+  // R[mio_outsel_31]: V(True)
+  logic mio_outsel_31_qe;
+  logic [0:0] mio_outsel_31_flds_we;
+  assign mio_outsel_31_qe = &mio_outsel_31_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_31_gated_we;
   assign mio_outsel_31_gated_we = mio_outsel_31_we & mio_outsel_regwen_31_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_31 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_31_re),
     .we     (mio_outsel_31_gated_we),
     .wd     (mio_outsel_31_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[31].d),
+    .qre    (),
+    .qe     (mio_outsel_31_flds_we[0]),
     .q      (reg2hw.mio_outsel[31].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_31_qs)
   );
+  assign reg2hw.mio_outsel[31].qe = mio_outsel_31_qe;
 
 
   // Subregister 32 of Multireg mio_outsel
-  // R[mio_outsel_32]: V(False)
+  // R[mio_outsel_32]: V(True)
+  logic mio_outsel_32_qe;
+  logic [0:0] mio_outsel_32_flds_we;
+  assign mio_outsel_32_qe = &mio_outsel_32_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_32_gated_we;
   assign mio_outsel_32_gated_we = mio_outsel_32_we & mio_outsel_regwen_32_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_32 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_32_re),
     .we     (mio_outsel_32_gated_we),
     .wd     (mio_outsel_32_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[32].d),
+    .qre    (),
+    .qe     (mio_outsel_32_flds_we[0]),
     .q      (reg2hw.mio_outsel[32].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_32_qs)
   );
+  assign reg2hw.mio_outsel[32].qe = mio_outsel_32_qe;
 
 
   // Subregister 33 of Multireg mio_outsel
-  // R[mio_outsel_33]: V(False)
+  // R[mio_outsel_33]: V(True)
+  logic mio_outsel_33_qe;
+  logic [0:0] mio_outsel_33_flds_we;
+  assign mio_outsel_33_qe = &mio_outsel_33_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_33_gated_we;
   assign mio_outsel_33_gated_we = mio_outsel_33_we & mio_outsel_regwen_33_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_33 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_33_re),
     .we     (mio_outsel_33_gated_we),
     .wd     (mio_outsel_33_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[33].d),
+    .qre    (),
+    .qe     (mio_outsel_33_flds_we[0]),
     .q      (reg2hw.mio_outsel[33].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_33_qs)
   );
+  assign reg2hw.mio_outsel[33].qe = mio_outsel_33_qe;
 
 
   // Subregister 34 of Multireg mio_outsel
-  // R[mio_outsel_34]: V(False)
+  // R[mio_outsel_34]: V(True)
+  logic mio_outsel_34_qe;
+  logic [0:0] mio_outsel_34_flds_we;
+  assign mio_outsel_34_qe = &mio_outsel_34_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_34_gated_we;
   assign mio_outsel_34_gated_we = mio_outsel_34_we & mio_outsel_regwen_34_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_34 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_34_re),
     .we     (mio_outsel_34_gated_we),
     .wd     (mio_outsel_34_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[34].d),
+    .qre    (),
+    .qe     (mio_outsel_34_flds_we[0]),
     .q      (reg2hw.mio_outsel[34].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_34_qs)
   );
+  assign reg2hw.mio_outsel[34].qe = mio_outsel_34_qe;
 
 
   // Subregister 35 of Multireg mio_outsel
-  // R[mio_outsel_35]: V(False)
+  // R[mio_outsel_35]: V(True)
+  logic mio_outsel_35_qe;
+  logic [0:0] mio_outsel_35_flds_we;
+  assign mio_outsel_35_qe = &mio_outsel_35_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_35_gated_we;
   assign mio_outsel_35_gated_we = mio_outsel_35_we & mio_outsel_regwen_35_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_35 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_35_re),
     .we     (mio_outsel_35_gated_we),
     .wd     (mio_outsel_35_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[35].d),
+    .qre    (),
+    .qe     (mio_outsel_35_flds_we[0]),
     .q      (reg2hw.mio_outsel[35].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_35_qs)
   );
+  assign reg2hw.mio_outsel[35].qe = mio_outsel_35_qe;
 
 
   // Subregister 36 of Multireg mio_outsel
-  // R[mio_outsel_36]: V(False)
+  // R[mio_outsel_36]: V(True)
+  logic mio_outsel_36_qe;
+  logic [0:0] mio_outsel_36_flds_we;
+  assign mio_outsel_36_qe = &mio_outsel_36_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_36_gated_we;
   assign mio_outsel_36_gated_we = mio_outsel_36_we & mio_outsel_regwen_36_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_36 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_36_re),
     .we     (mio_outsel_36_gated_we),
     .wd     (mio_outsel_36_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[36].d),
+    .qre    (),
+    .qe     (mio_outsel_36_flds_we[0]),
     .q      (reg2hw.mio_outsel[36].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_36_qs)
   );
+  assign reg2hw.mio_outsel[36].qe = mio_outsel_36_qe;
 
 
   // Subregister 37 of Multireg mio_outsel
-  // R[mio_outsel_37]: V(False)
+  // R[mio_outsel_37]: V(True)
+  logic mio_outsel_37_qe;
+  logic [0:0] mio_outsel_37_flds_we;
+  assign mio_outsel_37_qe = &mio_outsel_37_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_37_gated_we;
   assign mio_outsel_37_gated_we = mio_outsel_37_we & mio_outsel_regwen_37_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_37 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_37_re),
     .we     (mio_outsel_37_gated_we),
     .wd     (mio_outsel_37_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[37].d),
+    .qre    (),
+    .qe     (mio_outsel_37_flds_we[0]),
     .q      (reg2hw.mio_outsel[37].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_37_qs)
   );
+  assign reg2hw.mio_outsel[37].qe = mio_outsel_37_qe;
 
 
   // Subregister 38 of Multireg mio_outsel
-  // R[mio_outsel_38]: V(False)
+  // R[mio_outsel_38]: V(True)
+  logic mio_outsel_38_qe;
+  logic [0:0] mio_outsel_38_flds_we;
+  assign mio_outsel_38_qe = &mio_outsel_38_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_38_gated_we;
   assign mio_outsel_38_gated_we = mio_outsel_38_we & mio_outsel_regwen_38_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_38 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_38_re),
     .we     (mio_outsel_38_gated_we),
     .wd     (mio_outsel_38_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[38].d),
+    .qre    (),
+    .qe     (mio_outsel_38_flds_we[0]),
     .q      (reg2hw.mio_outsel[38].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_38_qs)
   );
+  assign reg2hw.mio_outsel[38].qe = mio_outsel_38_qe;
 
 
   // Subregister 39 of Multireg mio_outsel
-  // R[mio_outsel_39]: V(False)
+  // R[mio_outsel_39]: V(True)
+  logic mio_outsel_39_qe;
+  logic [0:0] mio_outsel_39_flds_we;
+  assign mio_outsel_39_qe = &mio_outsel_39_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_39_gated_we;
   assign mio_outsel_39_gated_we = mio_outsel_39_we & mio_outsel_regwen_39_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_39 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_39_re),
     .we     (mio_outsel_39_gated_we),
     .wd     (mio_outsel_39_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[39].d),
+    .qre    (),
+    .qe     (mio_outsel_39_flds_we[0]),
     .q      (reg2hw.mio_outsel[39].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_39_qs)
   );
+  assign reg2hw.mio_outsel[39].qe = mio_outsel_39_qe;
 
 
   // Subregister 40 of Multireg mio_outsel
-  // R[mio_outsel_40]: V(False)
+  // R[mio_outsel_40]: V(True)
+  logic mio_outsel_40_qe;
+  logic [0:0] mio_outsel_40_flds_we;
+  assign mio_outsel_40_qe = &mio_outsel_40_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_40_gated_we;
   assign mio_outsel_40_gated_we = mio_outsel_40_we & mio_outsel_regwen_40_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_40 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_40_re),
     .we     (mio_outsel_40_gated_we),
     .wd     (mio_outsel_40_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[40].d),
+    .qre    (),
+    .qe     (mio_outsel_40_flds_we[0]),
     .q      (reg2hw.mio_outsel[40].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_40_qs)
   );
+  assign reg2hw.mio_outsel[40].qe = mio_outsel_40_qe;
 
 
   // Subregister 41 of Multireg mio_outsel
-  // R[mio_outsel_41]: V(False)
+  // R[mio_outsel_41]: V(True)
+  logic mio_outsel_41_qe;
+  logic [0:0] mio_outsel_41_flds_we;
+  assign mio_outsel_41_qe = &mio_outsel_41_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_41_gated_we;
   assign mio_outsel_41_gated_we = mio_outsel_41_we & mio_outsel_regwen_41_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_41 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_41_re),
     .we     (mio_outsel_41_gated_we),
     .wd     (mio_outsel_41_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[41].d),
+    .qre    (),
+    .qe     (mio_outsel_41_flds_we[0]),
     .q      (reg2hw.mio_outsel[41].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_41_qs)
   );
+  assign reg2hw.mio_outsel[41].qe = mio_outsel_41_qe;
 
 
   // Subregister 42 of Multireg mio_outsel
-  // R[mio_outsel_42]: V(False)
+  // R[mio_outsel_42]: V(True)
+  logic mio_outsel_42_qe;
+  logic [0:0] mio_outsel_42_flds_we;
+  assign mio_outsel_42_qe = &mio_outsel_42_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_42_gated_we;
   assign mio_outsel_42_gated_we = mio_outsel_42_we & mio_outsel_regwen_42_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_42 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_42_re),
     .we     (mio_outsel_42_gated_we),
     .wd     (mio_outsel_42_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[42].d),
+    .qre    (),
+    .qe     (mio_outsel_42_flds_we[0]),
     .q      (reg2hw.mio_outsel[42].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_42_qs)
   );
+  assign reg2hw.mio_outsel[42].qe = mio_outsel_42_qe;
 
 
   // Subregister 43 of Multireg mio_outsel
-  // R[mio_outsel_43]: V(False)
+  // R[mio_outsel_43]: V(True)
+  logic mio_outsel_43_qe;
+  logic [0:0] mio_outsel_43_flds_we;
+  assign mio_outsel_43_qe = &mio_outsel_43_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_43_gated_we;
   assign mio_outsel_43_gated_we = mio_outsel_43_we & mio_outsel_regwen_43_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_43 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_43_re),
     .we     (mio_outsel_43_gated_we),
     .wd     (mio_outsel_43_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[43].d),
+    .qre    (),
+    .qe     (mio_outsel_43_flds_we[0]),
     .q      (reg2hw.mio_outsel[43].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_43_qs)
   );
+  assign reg2hw.mio_outsel[43].qe = mio_outsel_43_qe;
 
 
   // Subregister 44 of Multireg mio_outsel
-  // R[mio_outsel_44]: V(False)
+  // R[mio_outsel_44]: V(True)
+  logic mio_outsel_44_qe;
+  logic [0:0] mio_outsel_44_flds_we;
+  assign mio_outsel_44_qe = &mio_outsel_44_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_44_gated_we;
   assign mio_outsel_44_gated_we = mio_outsel_44_we & mio_outsel_regwen_44_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_44 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_44_re),
     .we     (mio_outsel_44_gated_we),
     .wd     (mio_outsel_44_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[44].d),
+    .qre    (),
+    .qe     (mio_outsel_44_flds_we[0]),
     .q      (reg2hw.mio_outsel[44].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_44_qs)
   );
+  assign reg2hw.mio_outsel[44].qe = mio_outsel_44_qe;
 
 
   // Subregister 45 of Multireg mio_outsel
-  // R[mio_outsel_45]: V(False)
+  // R[mio_outsel_45]: V(True)
+  logic mio_outsel_45_qe;
+  logic [0:0] mio_outsel_45_flds_we;
+  assign mio_outsel_45_qe = &mio_outsel_45_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_45_gated_we;
   assign mio_outsel_45_gated_we = mio_outsel_45_we & mio_outsel_regwen_45_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_45 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_45_re),
     .we     (mio_outsel_45_gated_we),
     .wd     (mio_outsel_45_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[45].d),
+    .qre    (),
+    .qe     (mio_outsel_45_flds_we[0]),
     .q      (reg2hw.mio_outsel[45].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_45_qs)
   );
+  assign reg2hw.mio_outsel[45].qe = mio_outsel_45_qe;
 
 
   // Subregister 46 of Multireg mio_outsel
-  // R[mio_outsel_46]: V(False)
+  // R[mio_outsel_46]: V(True)
+  logic mio_outsel_46_qe;
+  logic [0:0] mio_outsel_46_flds_we;
+  assign mio_outsel_46_qe = &mio_outsel_46_flds_we;
   // Create REGWEN-gated WE signal
   logic mio_outsel_46_gated_we;
   assign mio_outsel_46_gated_we = mio_outsel_46_we & mio_outsel_regwen_46_qs;
-  prim_subreg #(
-    .DW      (6),
-    .SwAccess(prim_subreg_pkg::SwAccessRW),
-    .RESVAL  (6'h2),
-    .Mubi    (1'b0)
+  prim_subreg_ext #(
+    .DW    (6)
   ) u_mio_outsel_46 (
-    .clk_i   (clk_i),
-    .rst_ni  (rst_ni),
-    .reinit_i(1'b0),
-
-    // from register interface
+    .re     (mio_outsel_46_re),
     .we     (mio_outsel_46_gated_we),
     .wd     (mio_outsel_46_wd),
-
-    // from internal hardware
-    .de     (1'b0),
-    .d      ('0),
-
-    // to internal hardware
-    .qe     (),
+    .d      (hw2reg.mio_outsel[46].d),
+    .qre    (),
+    .qe     (mio_outsel_46_flds_we[0]),
     .q      (reg2hw.mio_outsel[46].q),
     .ds     (),
-
-    // to register interface (read)
     .qs     (mio_outsel_46_qs)
   );
+  assign reg2hw.mio_outsel[46].qe = mio_outsel_46_qe;
 
 
   // Subregister 0 of Multireg mio_pad_attr_regwen
@@ -32290,117 +31610,155 @@ module pinmux_reg_top (
   assign mio_periph_insel_regwen_37_we = addr_hit[38] & reg_we & !reg_error;
 
   assign mio_periph_insel_regwen_37_wd = reg_wdata[0];
+  assign mio_periph_insel_0_re = addr_hit[39] & reg_re & !reg_error;
   assign mio_periph_insel_0_we = addr_hit[39] & reg_we & !reg_error;
 
   assign mio_periph_insel_0_wd = reg_wdata[5:0];
+  assign mio_periph_insel_1_re = addr_hit[40] & reg_re & !reg_error;
   assign mio_periph_insel_1_we = addr_hit[40] & reg_we & !reg_error;
 
   assign mio_periph_insel_1_wd = reg_wdata[5:0];
+  assign mio_periph_insel_2_re = addr_hit[41] & reg_re & !reg_error;
   assign mio_periph_insel_2_we = addr_hit[41] & reg_we & !reg_error;
 
   assign mio_periph_insel_2_wd = reg_wdata[5:0];
+  assign mio_periph_insel_3_re = addr_hit[42] & reg_re & !reg_error;
   assign mio_periph_insel_3_we = addr_hit[42] & reg_we & !reg_error;
 
   assign mio_periph_insel_3_wd = reg_wdata[5:0];
+  assign mio_periph_insel_4_re = addr_hit[43] & reg_re & !reg_error;
   assign mio_periph_insel_4_we = addr_hit[43] & reg_we & !reg_error;
 
   assign mio_periph_insel_4_wd = reg_wdata[5:0];
+  assign mio_periph_insel_5_re = addr_hit[44] & reg_re & !reg_error;
   assign mio_periph_insel_5_we = addr_hit[44] & reg_we & !reg_error;
 
   assign mio_periph_insel_5_wd = reg_wdata[5:0];
+  assign mio_periph_insel_6_re = addr_hit[45] & reg_re & !reg_error;
   assign mio_periph_insel_6_we = addr_hit[45] & reg_we & !reg_error;
 
   assign mio_periph_insel_6_wd = reg_wdata[5:0];
+  assign mio_periph_insel_7_re = addr_hit[46] & reg_re & !reg_error;
   assign mio_periph_insel_7_we = addr_hit[46] & reg_we & !reg_error;
 
   assign mio_periph_insel_7_wd = reg_wdata[5:0];
+  assign mio_periph_insel_8_re = addr_hit[47] & reg_re & !reg_error;
   assign mio_periph_insel_8_we = addr_hit[47] & reg_we & !reg_error;
 
   assign mio_periph_insel_8_wd = reg_wdata[5:0];
+  assign mio_periph_insel_9_re = addr_hit[48] & reg_re & !reg_error;
   assign mio_periph_insel_9_we = addr_hit[48] & reg_we & !reg_error;
 
   assign mio_periph_insel_9_wd = reg_wdata[5:0];
+  assign mio_periph_insel_10_re = addr_hit[49] & reg_re & !reg_error;
   assign mio_periph_insel_10_we = addr_hit[49] & reg_we & !reg_error;
 
   assign mio_periph_insel_10_wd = reg_wdata[5:0];
+  assign mio_periph_insel_11_re = addr_hit[50] & reg_re & !reg_error;
   assign mio_periph_insel_11_we = addr_hit[50] & reg_we & !reg_error;
 
   assign mio_periph_insel_11_wd = reg_wdata[5:0];
+  assign mio_periph_insel_12_re = addr_hit[51] & reg_re & !reg_error;
   assign mio_periph_insel_12_we = addr_hit[51] & reg_we & !reg_error;
 
   assign mio_periph_insel_12_wd = reg_wdata[5:0];
+  assign mio_periph_insel_13_re = addr_hit[52] & reg_re & !reg_error;
   assign mio_periph_insel_13_we = addr_hit[52] & reg_we & !reg_error;
 
   assign mio_periph_insel_13_wd = reg_wdata[5:0];
+  assign mio_periph_insel_14_re = addr_hit[53] & reg_re & !reg_error;
   assign mio_periph_insel_14_we = addr_hit[53] & reg_we & !reg_error;
 
   assign mio_periph_insel_14_wd = reg_wdata[5:0];
+  assign mio_periph_insel_15_re = addr_hit[54] & reg_re & !reg_error;
   assign mio_periph_insel_15_we = addr_hit[54] & reg_we & !reg_error;
 
   assign mio_periph_insel_15_wd = reg_wdata[5:0];
+  assign mio_periph_insel_16_re = addr_hit[55] & reg_re & !reg_error;
   assign mio_periph_insel_16_we = addr_hit[55] & reg_we & !reg_error;
 
   assign mio_periph_insel_16_wd = reg_wdata[5:0];
+  assign mio_periph_insel_17_re = addr_hit[56] & reg_re & !reg_error;
   assign mio_periph_insel_17_we = addr_hit[56] & reg_we & !reg_error;
 
   assign mio_periph_insel_17_wd = reg_wdata[5:0];
+  assign mio_periph_insel_18_re = addr_hit[57] & reg_re & !reg_error;
   assign mio_periph_insel_18_we = addr_hit[57] & reg_we & !reg_error;
 
   assign mio_periph_insel_18_wd = reg_wdata[5:0];
+  assign mio_periph_insel_19_re = addr_hit[58] & reg_re & !reg_error;
   assign mio_periph_insel_19_we = addr_hit[58] & reg_we & !reg_error;
 
   assign mio_periph_insel_19_wd = reg_wdata[5:0];
+  assign mio_periph_insel_20_re = addr_hit[59] & reg_re & !reg_error;
   assign mio_periph_insel_20_we = addr_hit[59] & reg_we & !reg_error;
 
   assign mio_periph_insel_20_wd = reg_wdata[5:0];
+  assign mio_periph_insel_21_re = addr_hit[60] & reg_re & !reg_error;
   assign mio_periph_insel_21_we = addr_hit[60] & reg_we & !reg_error;
 
   assign mio_periph_insel_21_wd = reg_wdata[5:0];
+  assign mio_periph_insel_22_re = addr_hit[61] & reg_re & !reg_error;
   assign mio_periph_insel_22_we = addr_hit[61] & reg_we & !reg_error;
 
   assign mio_periph_insel_22_wd = reg_wdata[5:0];
+  assign mio_periph_insel_23_re = addr_hit[62] & reg_re & !reg_error;
   assign mio_periph_insel_23_we = addr_hit[62] & reg_we & !reg_error;
 
   assign mio_periph_insel_23_wd = reg_wdata[5:0];
+  assign mio_periph_insel_24_re = addr_hit[63] & reg_re & !reg_error;
   assign mio_periph_insel_24_we = addr_hit[63] & reg_we & !reg_error;
 
   assign mio_periph_insel_24_wd = reg_wdata[5:0];
+  assign mio_periph_insel_25_re = addr_hit[64] & reg_re & !reg_error;
   assign mio_periph_insel_25_we = addr_hit[64] & reg_we & !reg_error;
 
   assign mio_periph_insel_25_wd = reg_wdata[5:0];
+  assign mio_periph_insel_26_re = addr_hit[65] & reg_re & !reg_error;
   assign mio_periph_insel_26_we = addr_hit[65] & reg_we & !reg_error;
 
   assign mio_periph_insel_26_wd = reg_wdata[5:0];
+  assign mio_periph_insel_27_re = addr_hit[66] & reg_re & !reg_error;
   assign mio_periph_insel_27_we = addr_hit[66] & reg_we & !reg_error;
 
   assign mio_periph_insel_27_wd = reg_wdata[5:0];
+  assign mio_periph_insel_28_re = addr_hit[67] & reg_re & !reg_error;
   assign mio_periph_insel_28_we = addr_hit[67] & reg_we & !reg_error;
 
   assign mio_periph_insel_28_wd = reg_wdata[5:0];
+  assign mio_periph_insel_29_re = addr_hit[68] & reg_re & !reg_error;
   assign mio_periph_insel_29_we = addr_hit[68] & reg_we & !reg_error;
 
   assign mio_periph_insel_29_wd = reg_wdata[5:0];
+  assign mio_periph_insel_30_re = addr_hit[69] & reg_re & !reg_error;
   assign mio_periph_insel_30_we = addr_hit[69] & reg_we & !reg_error;
 
   assign mio_periph_insel_30_wd = reg_wdata[5:0];
+  assign mio_periph_insel_31_re = addr_hit[70] & reg_re & !reg_error;
   assign mio_periph_insel_31_we = addr_hit[70] & reg_we & !reg_error;
 
   assign mio_periph_insel_31_wd = reg_wdata[5:0];
+  assign mio_periph_insel_32_re = addr_hit[71] & reg_re & !reg_error;
   assign mio_periph_insel_32_we = addr_hit[71] & reg_we & !reg_error;
 
   assign mio_periph_insel_32_wd = reg_wdata[5:0];
+  assign mio_periph_insel_33_re = addr_hit[72] & reg_re & !reg_error;
   assign mio_periph_insel_33_we = addr_hit[72] & reg_we & !reg_error;
 
   assign mio_periph_insel_33_wd = reg_wdata[5:0];
+  assign mio_periph_insel_34_re = addr_hit[73] & reg_re & !reg_error;
   assign mio_periph_insel_34_we = addr_hit[73] & reg_we & !reg_error;
 
   assign mio_periph_insel_34_wd = reg_wdata[5:0];
+  assign mio_periph_insel_35_re = addr_hit[74] & reg_re & !reg_error;
   assign mio_periph_insel_35_we = addr_hit[74] & reg_we & !reg_error;
 
   assign mio_periph_insel_35_wd = reg_wdata[5:0];
+  assign mio_periph_insel_36_re = addr_hit[75] & reg_re & !reg_error;
   assign mio_periph_insel_36_we = addr_hit[75] & reg_we & !reg_error;
 
   assign mio_periph_insel_36_wd = reg_wdata[5:0];
+  assign mio_periph_insel_37_re = addr_hit[76] & reg_re & !reg_error;
   assign mio_periph_insel_37_we = addr_hit[76] & reg_we & !reg_error;
 
   assign mio_periph_insel_37_wd = reg_wdata[5:0];
@@ -32545,144 +31903,191 @@ module pinmux_reg_top (
   assign mio_outsel_regwen_46_we = addr_hit[123] & reg_we & !reg_error;
 
   assign mio_outsel_regwen_46_wd = reg_wdata[0];
+  assign mio_outsel_0_re = addr_hit[124] & reg_re & !reg_error;
   assign mio_outsel_0_we = addr_hit[124] & reg_we & !reg_error;
 
   assign mio_outsel_0_wd = reg_wdata[5:0];
+  assign mio_outsel_1_re = addr_hit[125] & reg_re & !reg_error;
   assign mio_outsel_1_we = addr_hit[125] & reg_we & !reg_error;
 
   assign mio_outsel_1_wd = reg_wdata[5:0];
+  assign mio_outsel_2_re = addr_hit[126] & reg_re & !reg_error;
   assign mio_outsel_2_we = addr_hit[126] & reg_we & !reg_error;
 
   assign mio_outsel_2_wd = reg_wdata[5:0];
+  assign mio_outsel_3_re = addr_hit[127] & reg_re & !reg_error;
   assign mio_outsel_3_we = addr_hit[127] & reg_we & !reg_error;
 
   assign mio_outsel_3_wd = reg_wdata[5:0];
+  assign mio_outsel_4_re = addr_hit[128] & reg_re & !reg_error;
   assign mio_outsel_4_we = addr_hit[128] & reg_we & !reg_error;
 
   assign mio_outsel_4_wd = reg_wdata[5:0];
+  assign mio_outsel_5_re = addr_hit[129] & reg_re & !reg_error;
   assign mio_outsel_5_we = addr_hit[129] & reg_we & !reg_error;
 
   assign mio_outsel_5_wd = reg_wdata[5:0];
+  assign mio_outsel_6_re = addr_hit[130] & reg_re & !reg_error;
   assign mio_outsel_6_we = addr_hit[130] & reg_we & !reg_error;
 
   assign mio_outsel_6_wd = reg_wdata[5:0];
+  assign mio_outsel_7_re = addr_hit[131] & reg_re & !reg_error;
   assign mio_outsel_7_we = addr_hit[131] & reg_we & !reg_error;
 
   assign mio_outsel_7_wd = reg_wdata[5:0];
+  assign mio_outsel_8_re = addr_hit[132] & reg_re & !reg_error;
   assign mio_outsel_8_we = addr_hit[132] & reg_we & !reg_error;
 
   assign mio_outsel_8_wd = reg_wdata[5:0];
+  assign mio_outsel_9_re = addr_hit[133] & reg_re & !reg_error;
   assign mio_outsel_9_we = addr_hit[133] & reg_we & !reg_error;
 
   assign mio_outsel_9_wd = reg_wdata[5:0];
+  assign mio_outsel_10_re = addr_hit[134] & reg_re & !reg_error;
   assign mio_outsel_10_we = addr_hit[134] & reg_we & !reg_error;
 
   assign mio_outsel_10_wd = reg_wdata[5:0];
+  assign mio_outsel_11_re = addr_hit[135] & reg_re & !reg_error;
   assign mio_outsel_11_we = addr_hit[135] & reg_we & !reg_error;
 
   assign mio_outsel_11_wd = reg_wdata[5:0];
+  assign mio_outsel_12_re = addr_hit[136] & reg_re & !reg_error;
   assign mio_outsel_12_we = addr_hit[136] & reg_we & !reg_error;
 
   assign mio_outsel_12_wd = reg_wdata[5:0];
+  assign mio_outsel_13_re = addr_hit[137] & reg_re & !reg_error;
   assign mio_outsel_13_we = addr_hit[137] & reg_we & !reg_error;
 
   assign mio_outsel_13_wd = reg_wdata[5:0];
+  assign mio_outsel_14_re = addr_hit[138] & reg_re & !reg_error;
   assign mio_outsel_14_we = addr_hit[138] & reg_we & !reg_error;
 
   assign mio_outsel_14_wd = reg_wdata[5:0];
+  assign mio_outsel_15_re = addr_hit[139] & reg_re & !reg_error;
   assign mio_outsel_15_we = addr_hit[139] & reg_we & !reg_error;
 
   assign mio_outsel_15_wd = reg_wdata[5:0];
+  assign mio_outsel_16_re = addr_hit[140] & reg_re & !reg_error;
   assign mio_outsel_16_we = addr_hit[140] & reg_we & !reg_error;
 
   assign mio_outsel_16_wd = reg_wdata[5:0];
+  assign mio_outsel_17_re = addr_hit[141] & reg_re & !reg_error;
   assign mio_outsel_17_we = addr_hit[141] & reg_we & !reg_error;
 
   assign mio_outsel_17_wd = reg_wdata[5:0];
+  assign mio_outsel_18_re = addr_hit[142] & reg_re & !reg_error;
   assign mio_outsel_18_we = addr_hit[142] & reg_we & !reg_error;
 
   assign mio_outsel_18_wd = reg_wdata[5:0];
+  assign mio_outsel_19_re = addr_hit[143] & reg_re & !reg_error;
   assign mio_outsel_19_we = addr_hit[143] & reg_we & !reg_error;
 
   assign mio_outsel_19_wd = reg_wdata[5:0];
+  assign mio_outsel_20_re = addr_hit[144] & reg_re & !reg_error;
   assign mio_outsel_20_we = addr_hit[144] & reg_we & !reg_error;
 
   assign mio_outsel_20_wd = reg_wdata[5:0];
+  assign mio_outsel_21_re = addr_hit[145] & reg_re & !reg_error;
   assign mio_outsel_21_we = addr_hit[145] & reg_we & !reg_error;
 
   assign mio_outsel_21_wd = reg_wdata[5:0];
+  assign mio_outsel_22_re = addr_hit[146] & reg_re & !reg_error;
   assign mio_outsel_22_we = addr_hit[146] & reg_we & !reg_error;
 
   assign mio_outsel_22_wd = reg_wdata[5:0];
+  assign mio_outsel_23_re = addr_hit[147] & reg_re & !reg_error;
   assign mio_outsel_23_we = addr_hit[147] & reg_we & !reg_error;
 
   assign mio_outsel_23_wd = reg_wdata[5:0];
+  assign mio_outsel_24_re = addr_hit[148] & reg_re & !reg_error;
   assign mio_outsel_24_we = addr_hit[148] & reg_we & !reg_error;
 
   assign mio_outsel_24_wd = reg_wdata[5:0];
+  assign mio_outsel_25_re = addr_hit[149] & reg_re & !reg_error;
   assign mio_outsel_25_we = addr_hit[149] & reg_we & !reg_error;
 
   assign mio_outsel_25_wd = reg_wdata[5:0];
+  assign mio_outsel_26_re = addr_hit[150] & reg_re & !reg_error;
   assign mio_outsel_26_we = addr_hit[150] & reg_we & !reg_error;
 
   assign mio_outsel_26_wd = reg_wdata[5:0];
+  assign mio_outsel_27_re = addr_hit[151] & reg_re & !reg_error;
   assign mio_outsel_27_we = addr_hit[151] & reg_we & !reg_error;
 
   assign mio_outsel_27_wd = reg_wdata[5:0];
+  assign mio_outsel_28_re = addr_hit[152] & reg_re & !reg_error;
   assign mio_outsel_28_we = addr_hit[152] & reg_we & !reg_error;
 
   assign mio_outsel_28_wd = reg_wdata[5:0];
+  assign mio_outsel_29_re = addr_hit[153] & reg_re & !reg_error;
   assign mio_outsel_29_we = addr_hit[153] & reg_we & !reg_error;
 
   assign mio_outsel_29_wd = reg_wdata[5:0];
+  assign mio_outsel_30_re = addr_hit[154] & reg_re & !reg_error;
   assign mio_outsel_30_we = addr_hit[154] & reg_we & !reg_error;
 
   assign mio_outsel_30_wd = reg_wdata[5:0];
+  assign mio_outsel_31_re = addr_hit[155] & reg_re & !reg_error;
   assign mio_outsel_31_we = addr_hit[155] & reg_we & !reg_error;
 
   assign mio_outsel_31_wd = reg_wdata[5:0];
+  assign mio_outsel_32_re = addr_hit[156] & reg_re & !reg_error;
   assign mio_outsel_32_we = addr_hit[156] & reg_we & !reg_error;
 
   assign mio_outsel_32_wd = reg_wdata[5:0];
+  assign mio_outsel_33_re = addr_hit[157] & reg_re & !reg_error;
   assign mio_outsel_33_we = addr_hit[157] & reg_we & !reg_error;
 
   assign mio_outsel_33_wd = reg_wdata[5:0];
+  assign mio_outsel_34_re = addr_hit[158] & reg_re & !reg_error;
   assign mio_outsel_34_we = addr_hit[158] & reg_we & !reg_error;
 
   assign mio_outsel_34_wd = reg_wdata[5:0];
+  assign mio_outsel_35_re = addr_hit[159] & reg_re & !reg_error;
   assign mio_outsel_35_we = addr_hit[159] & reg_we & !reg_error;
 
   assign mio_outsel_35_wd = reg_wdata[5:0];
+  assign mio_outsel_36_re = addr_hit[160] & reg_re & !reg_error;
   assign mio_outsel_36_we = addr_hit[160] & reg_we & !reg_error;
 
   assign mio_outsel_36_wd = reg_wdata[5:0];
+  assign mio_outsel_37_re = addr_hit[161] & reg_re & !reg_error;
   assign mio_outsel_37_we = addr_hit[161] & reg_we & !reg_error;
 
   assign mio_outsel_37_wd = reg_wdata[5:0];
+  assign mio_outsel_38_re = addr_hit[162] & reg_re & !reg_error;
   assign mio_outsel_38_we = addr_hit[162] & reg_we & !reg_error;
 
   assign mio_outsel_38_wd = reg_wdata[5:0];
+  assign mio_outsel_39_re = addr_hit[163] & reg_re & !reg_error;
   assign mio_outsel_39_we = addr_hit[163] & reg_we & !reg_error;
 
   assign mio_outsel_39_wd = reg_wdata[5:0];
+  assign mio_outsel_40_re = addr_hit[164] & reg_re & !reg_error;
   assign mio_outsel_40_we = addr_hit[164] & reg_we & !reg_error;
 
   assign mio_outsel_40_wd = reg_wdata[5:0];
+  assign mio_outsel_41_re = addr_hit[165] & reg_re & !reg_error;
   assign mio_outsel_41_we = addr_hit[165] & reg_we & !reg_error;
 
   assign mio_outsel_41_wd = reg_wdata[5:0];
+  assign mio_outsel_42_re = addr_hit[166] & reg_re & !reg_error;
   assign mio_outsel_42_we = addr_hit[166] & reg_we & !reg_error;
 
   assign mio_outsel_42_wd = reg_wdata[5:0];
+  assign mio_outsel_43_re = addr_hit[167] & reg_re & !reg_error;
   assign mio_outsel_43_we = addr_hit[167] & reg_we & !reg_error;
 
   assign mio_outsel_43_wd = reg_wdata[5:0];
+  assign mio_outsel_44_re = addr_hit[168] & reg_re & !reg_error;
   assign mio_outsel_44_we = addr_hit[168] & reg_we & !reg_error;
 
   assign mio_outsel_44_wd = reg_wdata[5:0];
+  assign mio_outsel_45_re = addr_hit[169] & reg_re & !reg_error;
   assign mio_outsel_45_we = addr_hit[169] & reg_we & !reg_error;
 
   assign mio_outsel_45_wd = reg_wdata[5:0];
+  assign mio_outsel_46_re = addr_hit[170] & reg_re & !reg_error;
   assign mio_outsel_46_we = addr_hit[170] & reg_we & !reg_error;
 
   assign mio_outsel_46_wd = reg_wdata[5:0];

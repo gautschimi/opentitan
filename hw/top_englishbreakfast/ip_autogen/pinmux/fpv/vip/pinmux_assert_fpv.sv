@@ -99,8 +99,14 @@ module pinmux_assert_fpv
   `ASSUME(WkupSelStable_M, ##1 $stable(wkup_sel_i))
 
   // ------ Input mux assertions ------
-  pinmux_reg_pkg::pinmux_reg2hw_mio_periph_insel_mreg_t periph_insel;
-  assign periph_insel = pinmux.reg2hw.mio_periph_insel[periph_sel_i];
+  // The select in effect, stored in pinmux.sv since the CSR is external.
+  typedef struct packed {
+    logic [MioInselWidth-1:0] q;
+  } periph_insel_t;
+  periph_insel_t periph_insel;
+  assign periph_insel.q = pinmux.mio_periph_insel[periph_sel_i];
+  pinmux_reg_pkg::pinmux_reg2hw_mio_periph_insel_mreg_t periph_insel_wr;
+  assign periph_insel_wr = pinmux.reg2hw.mio_periph_insel[periph_sel_i];
 
   // Out of range selections are illegal as well.
   logic [2**$bits(periph_insel.q)-1:0] periph_insel_legal_vec;
@@ -108,6 +114,13 @@ module pinmux_assert_fpv
                                     MioPeriphInselLegal[periph_sel_i]);
   logic periph_insel_legal;
   assign periph_insel_legal = periph_insel_legal_vec[periph_insel.q];
+
+  // Only legal selects are stored. Writes of legal values take effect, other writes are ignored.
+  `ASSERT(InSelLegal_A, periph_insel_legal)
+  `ASSERT(InSelWrite_A, periph_insel_wr.qe && periph_insel_legal_vec[periph_insel_wr.q] |=>
+          periph_insel.q == $past(periph_insel_wr.q))
+  `ASSERT(InSelWriteIllegal_A, periph_insel_wr.qe && !periph_insel_legal_vec[periph_insel_wr.q] |=>
+          $stable(periph_insel.q))
 
   `ASSERT(InSel0_A, periph_insel.q == 0 |-> mio_to_periph_o[periph_sel_i] == 1'b0)
   `ASSERT(InSel1_A, periph_insel.q == 1 |-> mio_to_periph_o[periph_sel_i] == 1'b1)
@@ -131,14 +144,27 @@ module pinmux_assert_fpv
   `ASSERT(DioInSelN_A, dio_to_periph_o == dio_in_i)
 
   // ------ Output mux assertions ------
-  pinmux_reg_pkg::pinmux_reg2hw_mio_outsel_mreg_t mio_outsel;
-  assign mio_outsel = pinmux.reg2hw.mio_outsel[mio_sel_i];
+  // The select in effect, stored in pinmux.sv since the CSR is external.
+  typedef struct packed {
+    logic [MioOutselWidth-1:0] q;
+  } mio_outsel_t;
+  mio_outsel_t mio_outsel;
+  assign mio_outsel.q = pinmux.mio_outsel[mio_sel_i];
+  pinmux_reg_pkg::pinmux_reg2hw_mio_outsel_mreg_t mio_outsel_wr;
+  assign mio_outsel_wr = pinmux.reg2hw.mio_outsel[mio_sel_i];
 
   // Out of range selections are illegal as well.
   logic [2**$bits(mio_outsel.q)-1:0] mio_outsel_legal_vec;
   assign mio_outsel_legal_vec = $bits(mio_outsel_legal_vec)'(MioOutselLegal[mio_sel_i]);
   logic mio_outsel_legal;
   assign mio_outsel_legal = mio_outsel_legal_vec[mio_outsel.q];
+
+  // Only legal selects are stored. Writes of legal values take effect, other writes are ignored.
+  `ASSERT(OutSelLegal_A, mio_outsel_legal)
+  `ASSERT(OutSelWrite_A, mio_outsel_wr.qe && mio_outsel_legal_vec[mio_outsel_wr.q] |=>
+          mio_outsel.q == $past(mio_outsel_wr.q))
+  `ASSERT(OutSelWriteIllegal_A, mio_outsel_wr.qe && !mio_outsel_legal_vec[mio_outsel_wr.q] |=>
+          $stable(mio_outsel.q))
 
   pinmux_reg_pkg::pinmux_reg2hw_mio_pad_sleep_status_mreg_t mio_pad_sleep_status;
   assign mio_pad_sleep_status = pinmux.reg2hw.mio_pad_sleep_status[mio_sel_i];

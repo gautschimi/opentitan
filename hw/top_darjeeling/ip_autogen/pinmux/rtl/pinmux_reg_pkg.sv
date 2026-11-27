@@ -37,10 +37,12 @@ package pinmux_reg_pkg;
 
   typedef struct packed {
     logic [3:0]  q;
+    logic        qe;
   } pinmux_reg2hw_mio_periph_insel_mreg_t;
 
   typedef struct packed {
     logic [2:0]  q;
+    logic        qe;
   } pinmux_reg2hw_mio_outsel_mreg_t;
 
   typedef struct packed {
@@ -182,6 +184,14 @@ package pinmux_reg_pkg;
   } pinmux_reg2hw_wkup_cause_mreg_t;
 
   typedef struct packed {
+    logic [3:0]  d;
+  } pinmux_hw2reg_mio_periph_insel_mreg_t;
+
+  typedef struct packed {
+    logic [2:0]  d;
+  } pinmux_hw2reg_mio_outsel_mreg_t;
+
+  typedef struct packed {
     struct packed {
       logic [3:0]  d;
     } drive_strength;
@@ -264,9 +274,9 @@ package pinmux_reg_pkg;
 
   // Register -> HW type
   typedef struct packed {
-    pinmux_reg2hw_alert_test_reg_t alert_test; // [2609:2608]
-    pinmux_reg2hw_mio_periph_insel_mreg_t [3:0] mio_periph_insel; // [2607:2592]
-    pinmux_reg2hw_mio_outsel_mreg_t [11:0] mio_outsel; // [2591:2556]
+    pinmux_reg2hw_alert_test_reg_t alert_test; // [2625:2624]
+    pinmux_reg2hw_mio_periph_insel_mreg_t [3:0] mio_periph_insel; // [2623:2604]
+    pinmux_reg2hw_mio_outsel_mreg_t [11:0] mio_outsel; // [2603:2556]
     pinmux_reg2hw_mio_pad_attr_mreg_t [11:0] mio_pad_attr; // [2555:2268]
     pinmux_reg2hw_dio_pad_attr_mreg_t [72:0] dio_pad_attr; // [2267:516]
     pinmux_reg2hw_mio_pad_sleep_status_mreg_t [11:0] mio_pad_sleep_status; // [515:504]
@@ -284,6 +294,8 @@ package pinmux_reg_pkg;
 
   // HW -> register type
   typedef struct packed {
+    pinmux_hw2reg_mio_periph_insel_mreg_t [3:0] mio_periph_insel; // [1427:1412]
+    pinmux_hw2reg_mio_outsel_mreg_t [11:0] mio_outsel; // [1411:1376]
     pinmux_hw2reg_mio_pad_attr_mreg_t [11:0] mio_pad_attr; // [1375:1208]
     pinmux_hw2reg_dio_pad_attr_mreg_t [72:0] dio_pad_attr; // [1207:186]
     pinmux_hw2reg_mio_pad_sleep_status_mreg_t [11:0] mio_pad_sleep_status; // [185:162]
@@ -800,6 +812,38 @@ package pinmux_reg_pkg;
   parameter logic [31:0] PINMUX_ALERT_TEST_RESVAL = 32'h 80000000;
   parameter logic [0:0] PINMUX_ALERT_TEST_FATAL_FAULT_RESVAL = 1'h 0;
   parameter logic [0:0] PINMUX_ALERT_TEST_REGWEN_RESVAL = 1'h 1;
+  parameter logic [3:0] PINMUX_MIO_PERIPH_INSEL_0_RESVAL = 4'h 0;
+  parameter logic [3:0] PINMUX_MIO_PERIPH_INSEL_0_IN_0_RESVAL = 4'h 0;
+  parameter logic [3:0] PINMUX_MIO_PERIPH_INSEL_1_RESVAL = 4'h 0;
+  parameter logic [3:0] PINMUX_MIO_PERIPH_INSEL_1_IN_1_RESVAL = 4'h 0;
+  parameter logic [3:0] PINMUX_MIO_PERIPH_INSEL_2_RESVAL = 4'h 0;
+  parameter logic [3:0] PINMUX_MIO_PERIPH_INSEL_2_IN_2_RESVAL = 4'h 0;
+  parameter logic [3:0] PINMUX_MIO_PERIPH_INSEL_3_RESVAL = 4'h 0;
+  parameter logic [3:0] PINMUX_MIO_PERIPH_INSEL_3_IN_3_RESVAL = 4'h 0;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_0_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_0_OUT_0_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_1_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_1_OUT_1_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_2_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_2_OUT_2_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_3_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_3_OUT_3_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_4_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_4_OUT_4_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_5_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_5_OUT_5_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_6_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_6_OUT_6_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_7_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_7_OUT_7_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_8_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_8_OUT_8_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_9_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_9_OUT_9_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_10_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_10_OUT_10_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_11_RESVAL = 3'h 2;
+  parameter logic [2:0] PINMUX_MIO_OUTSEL_11_OUT_11_RESVAL = 3'h 2;
   parameter logic [23:0] PINMUX_MIO_PAD_ATTR_0_RESVAL = 24'h 0;
   parameter logic [0:0] PINMUX_MIO_PAD_ATTR_0_INVERT_0_RESVAL = 1'h 0;
   parameter logic [0:0] PINMUX_MIO_PAD_ATTR_0_VIRTUAL_OD_EN_0_RESVAL = 1'h 0;
